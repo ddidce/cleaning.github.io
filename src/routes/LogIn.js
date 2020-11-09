@@ -1,9 +1,9 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
-import '../LogIn.css';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
+import '../css/LogIn.css';
 
 // 프롭스로 받은 onLogin이 아들 / 아들이 값을 받아서 다시 아부지한테 보냄
 const LogIn = ({ onLogin }) => {

@@ -1,13 +1,13 @@
 /** @format */
 
 import React from 'react';
-import Service from '../Service';
-import Slide from '../Slide';
-import About from '../About';
+import Service from '../components/Service';
+import Slide from '../components/Slide';
+import About from '../components/About';
 import Footer from '../components/Footer';
-import Video from '../assets/videos/mainVideo.mp4';
-import '../Home.css';
 import Navbar from '../components/Navbar';
+import Video from '../assets/videos/mainVideo.mp4';
+import '../css/Home.css';
 
 const Home = ({ user, logout }) => {
     return (

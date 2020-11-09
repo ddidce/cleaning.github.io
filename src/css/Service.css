@@ -2,7 +2,7 @@
     overflow-y: hidden;
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 500px;
     display: flex;
     justify-content: center;
     background-color: #eff1f2;
@@ -14,7 +14,7 @@
     text-transform: uppercase;
     font-weight: 900;
     color: #2789F6;
-    top: 100px;
+    top: 90px;
     letter-spacing: 15px;
 }
 
@@ -39,6 +39,7 @@
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
+    bottom: 30px;
 }
 
 .icon {
@@ -49,4 +50,11 @@
 .icon h3,
 .icon p {
     margin-top: 20px;
+    font-size: 25px;
+    color: #045DC0;
+}
+
+.icon img {
+    /* width: 90px; */
+    height: 90px;
 }

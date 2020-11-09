@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DaumPostcode from 'react-daum-postcode';
-import '../InfoInput.css';
+import '../css/InfoInput.css';
 
 // http://www.objgen.com/json/models/Pzu <- json파일
 const InfoInput = () => {

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import '../../Board.css';
-
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import BoardInfo from './BoardInfo';
+import '../../css/Board.css';
 
 const Board = () => {
     // 검색기능

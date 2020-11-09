@@ -6,11 +6,11 @@
 
 import React, { useEffect, useState } from 'react';
 import DaumPostcode from 'react-daum-postcode';
-import '../MemberModifiy.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../css/MemberModifiy.css';
 
 const MemberModifiy = ({ cureentUser }) => {
     const [post, setPost] = useState({

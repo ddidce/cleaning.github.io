@@ -75,7 +75,7 @@
 }
 
 .sub_visual06 {
-    background-image: url(../src/assets/images/sub_visual06.jpg);
+    background-image: url(../../src/assets/images/sub_visual06.jpg);
     overflow-y: hidden;
     margin-bottom: 100px;
 }
@@ -193,7 +193,7 @@
     width: 200px;
     height: 44px;
     padding: 0 40px 0 20px;
-    background: #f6f6f6 url(../src/assets/images/arrow_select.png) no-repeat 185px center;
+    background: #f6f6f6 url(../../src/assets/images/arrow_select.png) no-repeat 185px center;
     border: 1px solid #f6f6f6;
 }
 

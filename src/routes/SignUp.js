@@ -11,10 +11,10 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Terms from './Terms';
-import '../SignUp.css';
 import InfoInput from './InfoInput';
 import SignUpComp from './SignUpComp';
 import { Link } from 'react-router-dom';
+import '../css/SignUp.css';
 
 const useStyles = makeStyles((theme) => ({
     root: {

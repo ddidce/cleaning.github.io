@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import '../../QnA.css';
+import '../../css/QnA.css';
 import QnAInfo from './QnAInfo';
 
 const QnA = () => {
