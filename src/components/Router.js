@@ -3,15 +3,15 @@
 import React, { useState } from 'react';
 // import SignUp from '../routes/signUp';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from '../routes/Home';
-import SignUpComp from '../routes/SignUpComp';
-import SignUp from '../routes/SignUp';
-import LogIn from '../routes/LogIn';
-import InfoInput from '../routes/InfoInput';
-import MemberModifiy from '../routes/MemberModifiy';
-import Board from '../routes/Board/Board';
-import QnA from '../routes/Board/QnA';
-import QnAWriteForm from '../routes/Board/QnAWriteForm';
+import Home from '../client/Home';
+import SignUpComp from '../pages/SignUpComp';
+import SignUp from '../pages/SignUp';
+import LogIn from '../pages/LogIn';
+import InfoInput from '../pages/InfoInput';
+import MemberModifiy from '../pages/MemberModifiy';
+import Board from '../pages/Board/Board';
+import QnA from '../pages/Board/QnA';
+import QnAWriteForm from '../pages/Board/QnAWriteForm';
 
 const AppRouter = () => {
     // console.log(isLoggedIn);
