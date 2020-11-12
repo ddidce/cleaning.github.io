@@ -30,7 +30,7 @@ const QnAWriteForm = () => {
     console.log(phone, email, titls, edit, password);
     const history = useHistory();
     const onClickBtn = () => {
-        alert('완료되었습니다.');
+        alert('???????.');
         history.push('/QnA');
     };
     return (
@@ -41,7 +41,7 @@ const QnAWriteForm = () => {
                     <h2>Q & A</h2>
                     <ul className="sub_tab">
                         <li>
-                            <Link to="/Board">공지사항</Link>
+                            <Link to="/Board">????</Link>
                         </li>
 
                         <li className="on">
@@ -50,15 +50,15 @@ const QnAWriteForm = () => {
                     </ul>
                 </div>
             </div>
-            <h3 className="qna_tit">칭찬코너</h3>
+            <h3 className="qna_tit">????</h3>
 
             <p className="qna_txt">
-                '프로젝트 서비스를 이용해 주셔서 감사합니다. '
+                '???? ???? ??? ??? ?????. '
             </p>
             <div className="QnA_write_form write_praise">
                 <div className="row">
                     <label htmlFor="wirte_phone" className="label">
-                        연락처 *
+                        ??? *
                     </label>
                     <div className="input_box phone">
                         <div className="phone_input">
@@ -90,7 +90,7 @@ const QnAWriteForm = () => {
                 </div>
                 <div className="row">
                     <label htmlFor="wirte_title" className="label">
-                        제목 *
+                        ?? *
                     </label>
                     <div className="input_box title">
                         <input
@@ -103,7 +103,7 @@ const QnAWriteForm = () => {
                 </div>
                 <div className="row contents">
                     <label htmlFor="wirte_edit" className="label">
-                        내용 *
+                        ?? *
                     </label>
                     <div className="input_box">
                         <textarea
@@ -117,7 +117,7 @@ const QnAWriteForm = () => {
 
                 <div className="row">
                     <label htmlFor="wirte_password" className="label">
-                        비밀번호 *
+                        ???? *
                     </label>
                     <div className="input_box password">
                         <input
@@ -127,7 +127,7 @@ const QnAWriteForm = () => {
                             onChange={onchangePassword}
                         />
                         <span className="pass_chk">
-                            숫자 네자리를 입력하세요.
+                            ?? ???? ?????.
                         </span>
                     </div>
                 </div>
@@ -139,7 +139,7 @@ const QnAWriteForm = () => {
                         className="btn_list"
                         onClick={onClickBtn}
                     >
-                        확인
+                        ??
                     </button>
                 </div>
             </div>

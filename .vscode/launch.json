@@ -1,0 +1,22 @@
+{
+    // IntelliSense瑜� �궗�슜�븯�뿬 媛��뒫�븳 �듅�꽦�뿉 ���빐 �븣�븘蹂댁꽭�슂.
+    // 湲곗〈 �듅�꽦�뿉 ���븳 �꽕紐낆쓣 蹂대젮硫� 媛�由ы궢�땲�떎.
+    // �옄�꽭�븳 �궡�슜�쓣 蹂대젮硫� https://go.microsoft.com/fwlink/?linkid=830387�쓣(瑜�) 諛⑸Ц�븯�꽭�슂.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Board.js",
+            "type": "chrome",
+            "request": "launch",
+            "port": 9283,
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
