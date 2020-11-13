@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slide_ani::before {
+    content: "";
+    position: absolute;
+    border: 1.5px solid #2789F6;
+    background-color: #2789F6;
+    height: 40px;
+    top: 0;
+    left: 50%;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2789F6;
+    outline: none;
+    z-index: -1;
+}
+
+.slider h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.slider p:nth-child(2) {
+    width: 850px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.slider p:nth-child(3) {
+    text-align: center;
+}
