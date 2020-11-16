@@ -12,7 +12,7 @@ import MemberModifiy from '../pages/MemberModifiy';
 import Board from '../pages/Board/Board';
 import QnA from '../pages/Board/QnA';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
-import ReservationConfirm from '../pages/ReservationConfirm';
+import ReservationConfirm from '../pages/ReservationConfirm/ReservationConfirm';
 
 const AppRouter = () => {
     // console.log(isLoggedIn);

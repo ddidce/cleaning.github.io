@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import AppRouter from './Router';
-import axios from 'axios';
 const App = () => {
     // const [user , setUser] = useState(null);
 

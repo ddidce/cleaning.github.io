@@ -107,8 +107,8 @@ const QnA = () => {
                     </ul>
                 </div>
             </div>
-            <div class="inner_qna">
-                <div class="praise_top">
+            <div className="inner_qna">
+                <div className="praise_top">
                     <div>
                         <p>
                             <em>고객의 소중한 공간!</em>프로젝트가 완벽한 청소
@@ -123,7 +123,7 @@ const QnA = () => {
                 <form
                     id="searchForm"
                     name="searchForm"
-                    class="search_form"
+                    className="search_form"
                     method="get"
                 >
                     <input type="hidden" name="bs_code" value="board3" />
@@ -135,7 +135,7 @@ const QnA = () => {
                     </select>
                     <input
                         type="text"
-                        class="input_search"
+                        className="input_search"
                         name="keyword"
                         id="keyword"
                         onChange={handleChange}
@@ -143,12 +143,12 @@ const QnA = () => {
                     />
                     <button type="submit">검색</button>
                 </form>
-                <p class="table_num">
+                <p className="table_num">
                     <span>{listQna.length}</span>건
                 </p>
 
                 {/* 공지사항 리스트  */}
-                <table class="table_list">
+                <table className="table_list">
                     <tbody>{listQna}</tbody>
                 </table>
             </div>

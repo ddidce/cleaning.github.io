@@ -7,11 +7,10 @@
 import React, { useEffect, useState } from 'react';
 import DaumPostcode from 'react-daum-postcode';
 import axios from 'axios';
-import { Link, Route, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Navbar from '../components/Navbar';
-import ReservationConfirm from './ReservationConfirm';
 import '../css/MemberModifiy.css';
 
 const MemberModifiy = ({ cureentUser }) => {
