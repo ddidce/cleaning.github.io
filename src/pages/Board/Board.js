@@ -4,12 +4,29 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import BoardInfo from './BoardInfo';
 import '../../css/Board.css';
+import axios from 'axios';
 
 const Board = () => {
     // 검색기능
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [selectedKey, setSelectedKey] = useState(-1);
+    const [call, setCall] = useState([]);
+    let URL =
+        // 'http://localhost:8080/SpringFileBoardPR/board/connect.do?name=testkim';
+        'http://localhost:8080/controller/sample/sendList.do';
+
+    useEffect(() => {
+        const users = async () => {
+            try {
+                const response = await axios.get(URL);
+                setCall(response.data);
+            } catch (error) {
+                // alert('에러입니다,');
+            }
+        };
+        users();
+    }, []);
 
     const boards = [
         {
@@ -46,10 +63,9 @@ const Board = () => {
     const handleClick = (key) => {
         setSelectedKey(key);
     };
-    console.log(selectedKey + 1);
 
     useEffect(() => {
-        const items = boards.filter((data) => {
+        const items = call.filter((data) => {
             if (searchTerm === null) {
                 return data;
             } else if (data.title.toLowerCase().includes(searchTerm)) {
@@ -68,17 +84,21 @@ const Board = () => {
     // });
     // console.log(items);
 
-    const listItem = searchResults.map((board, i) => {
+    const listItem = call.map((calls, i) => {
         return (
             <BoardInfo
                 key={i}
-                board={board}
+                board={calls}
                 onClick={() => {
                     handleClick(i);
                 }}
             />
         );
     });
+
+    console.log(searchResults);
+    console.log(listItem);
+    console.log(call);
     return (
         <>
             <Navbar />

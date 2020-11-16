@@ -31,7 +31,7 @@ const Navbar = ({ logout }) => {
                             <Link to="/Contact">견적</Link>
                         </li>
                         <li className="nav-menu">
-                            <Link to="/Price">공지사항</Link>
+                            <Link to="/Board">공지사항</Link>
                         </li>
                         {
                             (() => {

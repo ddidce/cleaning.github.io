@@ -1,8 +1,8 @@
-import { Link } from '@material-ui/core';
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import '../../css/QnAWriteForm.css';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 const QnAWriteForm = () => {
     const [phone, setPhone] = useState('');
@@ -10,6 +10,7 @@ const QnAWriteForm = () => {
     const [titls, settitle] = useState('');
     const [edit, setEdit] = useState('');
     const [password, setPassword] = useState('');
+    const BASE_URL = `http://localhost:8080/controller/sample/sendList.do`;
 
     const onchangePhone = (e) => {
         setPhone(e.target.value);
@@ -27,10 +28,22 @@ const QnAWriteForm = () => {
         setPassword(e.target.value);
     };
 
-    console.log(phone, email, titls, edit, password);
+    // console.log(phone, email, titls, edit, password);
     const history = useHistory();
     const onClickBtn = () => {
         alert('완료되었습니다.');
+        const qnaRegister = {
+            phone: phone,
+            email: email,
+            title: titls,
+            edit: edit,
+            password: password,
+        };
+        console.log(qnaRegister);
+        axios.post(BASE_URL, { qnaRegister }).then((res) => {
+            console.log(res);
+            console.log(res.data);
+        });
         history.push('/QnA');
     };
     return (
@@ -65,8 +78,8 @@ const QnAWriteForm = () => {
                             <input
                                 type="tel"
                                 name="b_Mobil1"
-                                value=""
-                                maxLength="3"
+                                value={phone}
+                                maxLength="13"
                                 onChange={onchangePhone}
                             />
                         </div>
@@ -81,7 +94,7 @@ const QnAWriteForm = () => {
                             <input
                                 type="text"
                                 name="b_email"
-                                value=""
+                                value={email}
                                 maxLength="50"
                                 onChange={onchangeEmail}
                             />
@@ -96,6 +109,7 @@ const QnAWriteForm = () => {
                         <input
                             type="text"
                             name="b_title"
+                            value={titls}
                             maxLength="100"
                             onChange={onchangeTitle}
                         />
@@ -110,6 +124,7 @@ const QnAWriteForm = () => {
                             className="ckeditor"
                             id="b_text"
                             name="b_text"
+                            value={edit}
                             onChange={onchangeEdit}
                         ></textarea>
                     </div>
@@ -124,6 +139,7 @@ const QnAWriteForm = () => {
                             type="password"
                             name="b_pass"
                             maxLength="4"
+                            value={password}
                             onChange={onchangePassword}
                         />
                         <span className="pass_chk">

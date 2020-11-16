@@ -46,8 +46,7 @@ const footer = () => {
 
                 {/* sf => second fourth */}
                 <div className="footer-contents_ss">
-                    {/* Miso 이름 바꿔야함 */}
-                    <p> © 2020. Project. Miso, Inc. All Rights Reserved.</p>
+                    <p> © 2020. Project. Inc. All Rights Reserved.</p>
                 </div>
             </footer>
         </div>

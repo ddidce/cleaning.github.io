@@ -12,6 +12,7 @@ import MemberModifiy from '../pages/MemberModifiy';
 import Board from '../pages/Board/Board';
 import QnA from '../pages/Board/QnA';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
+import ReservationConfirm from '../pages/ReservationConfirm';
 
 const AppRouter = () => {
     // console.log(isLoggedIn);
@@ -48,8 +49,12 @@ const AppRouter = () => {
                     <InfoInput />
                 </Route>
 
-                <Route exact path="/MemberModifiy/">
+                <Route exact path="/MemberModifiy">
                     <MemberModifiy cureentUser={cureentUser} />
+                </Route>
+
+                <Route path="/ReservationConfirm">
+                    <ReservationConfirm />
                 </Route>
 
                 <Route exact path="/Board">

@@ -7,9 +7,11 @@
 import React, { useEffect, useState } from 'react';
 import DaumPostcode from 'react-daum-postcode';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { Link, Route, useHistory } from 'react-router-dom';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Navbar from '../components/Navbar';
+import ReservationConfirm from './ReservationConfirm';
 import '../css/MemberModifiy.css';
 
 const MemberModifiy = ({ cureentUser }) => {
@@ -119,8 +121,22 @@ const MemberModifiy = ({ cureentUser }) => {
                     isDaumPost={post.isaumPost}
                 />
             ) : null}
+            <Navbar />
+            <div className="sub_visual sub_visual06">
+                <div className="inner">
+                    <h2>회원정보관리</h2>
+                    <ul className="sub_tab">
+                        <li className="on">
+                            <Link to="/MemberModifiy">회원정보관리</Link>
+                        </li>
+
+                        <li>
+                            <Link to="/ReservationConfirm">예약 확인</Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div className="infoModi">
-                <h3 className="sub_tit">회원정보관리</h3>
                 <form
                     method="post"
                     name="joinform"
