@@ -51,6 +51,7 @@
     text-align: center;
     border: 0;
     margin: 0 auto;
+    border-top: 1px solid #dfdfdf;
 }
 
 .reservation_btn {

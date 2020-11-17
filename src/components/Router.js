@@ -45,26 +45,26 @@ const AppRouter = () => {
                     />
                 </Route>
 
-                <Route exact path="/asd">
+                {/* <Route exact path="/asd">
                     <InfoInput />
-                </Route>
+                </Route> */}
 
                 <Route exact path="/MemberModifiy">
-                    <MemberModifiy cureentUser={cureentUser} />
+                    <MemberModifiy cureentUser={cureentUser} logout={logout} />
                 </Route>
 
                 <Route path="/ReservationConfirm">
-                    <ReservationConfirm />
+                    <ReservationConfirm logout={logout} />
                 </Route>
 
                 <Route exact path="/Board">
-                    <Board />
+                    <Board logout={logout} />
                 </Route>
                 <Route exact path="/QnA">
-                    <QnA />
+                    <QnA logout={logout} />
                 </Route>
                 <Route exact path="/QnAWriteForm">
-                    <QnAWriteForm />
+                    <QnAWriteForm logout={logout} />
                 </Route>
             </Switch>
         </Router>

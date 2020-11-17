@@ -4,14 +4,16 @@ nav {
     align-items: center;
 }
 
-nav .navbar-left {
-    position: relative;
-    left: 5%;
-    width: 50px;
+nav .logo {
+    position: absolute;
+    left: -3%;
+    padding: 0;
 }
 
 nav .navbar-right {
+    position: relative;
     width: 100%;
+    left: 10%;
 }
 
 .navbar ul {

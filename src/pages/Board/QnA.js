@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import '../../css/QnA.css';
 import QnAInfo from './QnAInfo';
 
-const QnA = () => {
+const QnA = ({ logout }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [selectedKey, setSelectedKey] = useState(-1);
@@ -92,7 +92,7 @@ const QnA = () => {
     });
     return (
         <>
-            <Navbar />
+            <Navbar logout={logout} />
             <div className="sub_visual sub_visual06">
                 <div className="inner">
                     <h2>Q & A</h2>

@@ -4,7 +4,7 @@ import '../../css/QnAWriteForm.css';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-const QnAWriteForm = () => {
+const QnAWriteForm = ({ logout }) => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [titls, settitle] = useState('');
@@ -48,7 +48,7 @@ const QnAWriteForm = () => {
     };
     return (
         <>
-            <Navbar />
+            <Navbar logout={logout} />
             <div className="sub_visual sub_visual06">
                 <div className="inner">
                     <h2>Q & A</h2>

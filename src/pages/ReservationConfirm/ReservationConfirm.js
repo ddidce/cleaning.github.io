@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import ReservationConfirmInfo from './ReservationConfirmInfo';
 import '../../css/ReservationConfirm.css';
 
-const ReservationConfirm = () => {
+const ReservationConfirm = ({ logout }) => {
     const [prodInfo, setProdInfo] = useState([
         {
             id: 1,
@@ -20,6 +20,14 @@ const ReservationConfirm = () => {
             service: '공공기관',
             serviceArea: '사무실 및 계단',
             payment: '400,000 원',
+            status: '결제완료',
+            management: '완료',
+        },
+        {
+            id: 3,
+            service: '주거시설',
+            serviceArea: '안방 및 거실',
+            payment: '150,000 원',
             status: '결제완료',
             management: '완료',
         },
@@ -40,7 +48,7 @@ const ReservationConfirm = () => {
     });
     return (
         <>
-            <Navbar />
+            <Navbar logout={logout} />
             <div className="sub_visual sub_visual06">
                 <div className="inner">
                     <h2>예약 확인</h2>

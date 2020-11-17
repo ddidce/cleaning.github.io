@@ -6,7 +6,7 @@ import BoardInfo from './BoardInfo';
 import '../../css/Board.css';
 import axios from 'axios';
 
-const Board = () => {
+const Board = ({ logout }) => {
     // 검색기능
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -101,7 +101,7 @@ const Board = () => {
     console.log(call);
     return (
         <>
-            <Navbar />
+            <Navbar logout={logout} />
             <div className="sub_visual sub_visual06">
                 <div className="inner">
                     <h2>공지사항</h2>

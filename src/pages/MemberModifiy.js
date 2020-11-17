@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Navbar from '../components/Navbar';
 import '../css/MemberModifiy.css';
 
-const MemberModifiy = ({ cureentUser }) => {
+const MemberModifiy = ({ cureentUser, logout }) => {
     const [post, setPost] = useState({
         name: '',
         phone: '',
@@ -120,7 +120,7 @@ const MemberModifiy = ({ cureentUser }) => {
                     isDaumPost={post.isaumPost}
                 />
             ) : null}
-            <Navbar />
+            <Navbar logout={logout} />
             <div className="sub_visual sub_visual06">
                 <div className="inner">
                     <h2>회원정보관리</h2>

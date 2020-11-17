@@ -21,7 +21,7 @@ const footer = () => {
 
                 <div className="footer-contents_t">
                     <p>Tel : 02-2362-5923</p>
-                    <p>영업시간 : 9am - 7pm</p>
+                    <p>영업시간 : 09am - 19pm</p>
                 </div>
 
                 <div className="footer-contents_sf">
