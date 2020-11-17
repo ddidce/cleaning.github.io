@@ -16,6 +16,7 @@ const Reservation = () => {
     }else{
         setEmail('이메일을 확인해주세요')
         return false;
+        //계속 렌더링 되는 중
     } 
 }
     // const money=()=>{
