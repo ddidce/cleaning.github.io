@@ -28,7 +28,7 @@ const Navbar = ({ logout }) => {
                             <Link to="/DetailService">서비스</Link>
                         </li>
                         <li className="nav-menu">
-                            <Link to="/Contact">견적</Link>
+                            <Link to="/Reservation">견적</Link>
                         </li>
                         <li className="nav-menu">
                             <Link to="/Price">공지사항</Link>

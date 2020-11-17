@@ -18,6 +18,7 @@ import D_home from '../pages/D_home'
 import Education from '../pages/Education'
 import Medical from '../pages/Medical';
 import Food from '../pages/Food';
+import Reservation from '../components/Reservation';
 
 const AppRouter = () => {
     // console.log(isLoggedIn);
@@ -62,6 +63,10 @@ const AppRouter = () => {
                     <Board />
                 </Route>
 
+                <Route exact path="/Reservation">
+                    <Reservation />
+                </Route>
+                
                 <Route exact path="/DetailService">
                     <DetailService />
                 </Route>
