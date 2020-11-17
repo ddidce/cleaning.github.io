@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9e2a03a62c13205745a855d97236e6c0",
+    "revision": "918be1fac9a11449caa7ee98af4c242c",
     "url": "/cleaning.github.io/index.html"
   },
   {
-    "revision": "fb58265af9f8781a864e",
+    "revision": "e02129bd7240d55777e9",
     "url": "/cleaning.github.io/static/css/2.edbb7887.chunk.css"
   },
   {
-    "revision": "df29ad7ca60768a6f5cc",
-    "url": "/cleaning.github.io/static/css/main.da56c301.chunk.css"
+    "revision": "04891fd155922a1bf0f8",
+    "url": "/cleaning.github.io/static/css/main.c8c11c80.chunk.css"
   },
   {
-    "revision": "fb58265af9f8781a864e",
-    "url": "/cleaning.github.io/static/js/2.5f1eb494.chunk.js"
+    "revision": "e02129bd7240d55777e9",
+    "url": "/cleaning.github.io/static/js/2.c24c3a4c.chunk.js"
   },
   {
     "revision": "7fa8ec16d0a9f9102dca5c04818f2334",
-    "url": "/cleaning.github.io/static/js/2.5f1eb494.chunk.js.LICENSE.txt"
+    "url": "/cleaning.github.io/static/js/2.c24c3a4c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "df29ad7ca60768a6f5cc",
-    "url": "/cleaning.github.io/static/js/main.8d9868cc.chunk.js"
+    "revision": "04891fd155922a1bf0f8",
+    "url": "/cleaning.github.io/static/js/main.df90e627.chunk.js"
   },
   {
     "revision": "e2685ba44646a44737ed",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1806e37356e63345049f09308ec02bdd",
     "url": "/cleaning.github.io/static/media/AboutUs_one.1806e373.jpg"
+  },
+  {
+    "revision": "3a44ffb1539dbcfce07e73ce69ea55de",
+    "url": "/cleaning.github.io/static/media/AppleSDGothicNeoM.3a44ffb1.ttf"
   },
   {
     "revision": "64d41f9a871d16240a27bf18a96e4103",
