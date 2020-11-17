@@ -13,7 +13,6 @@ import Board from '../pages/Board/Board';
 import QnA from '../pages/Board/QnA';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
 import ReservationConfirm from '../pages/ReservationConfirm/ReservationConfirm';
-
 const AppRouter = () => {
     // console.log(isLoggedIn);
     const [user, setUser] = useState(null);
@@ -60,6 +59,35 @@ const AppRouter = () => {
                 <Route exact path="/Board">
                     <Board logout={logout} />
                 </Route>
+
+                <Route exact path="/Reservation">
+                    <Reservation />
+                </Route>
+
+                <Route exact path="/DetailService">
+                    <DetailService />
+                </Route>
+
+                <Route exact path="/DetailService/Home">
+                    <D_home />
+                </Route>
+
+                <Route exact path="/DetailService/Public">
+                    <Public />
+                </Route>
+
+                <Route exact path="/DetailService/Education">
+                    <Education />
+                </Route>
+
+                <Route exact path="/DetailService/Medical">
+                    <Medical />
+                </Route>
+
+                <Route exact path="/DetailService/Food">
+                    <Food />
+                </Route>
+
                 <Route exact path="/QnA">
                     <QnA logout={logout} />
                 </Route>
