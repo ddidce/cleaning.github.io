@@ -7,13 +7,15 @@ import QnAInfo from './QnAInfo';
 
 const QnA = ({ logout, qnaRegister }) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResult, setSearchResult] = useState([]);
+    const [searchResult, setSearchResult] = useState({});
     const [selectedKey, setSelectedKey] = useState(-1);
     const location = useLocation();
     useEffect(() => {
-        console.log(location.state);
+        const QnAInfo = location.state;
+        console.dir(QnAInfo);
     }, [location]);
     const qna = [];
+
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
     };

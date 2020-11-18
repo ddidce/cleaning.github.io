@@ -41,13 +41,14 @@ const QnAWriteForm = ({ logout }) => {
         };
 
         console.log(qnaRegister);
-        axios.post(BASE_URL, { qnaRegister }).then(() => {
+        axios.post(BASE_URL, { qnaRegister }).then((asd) => {
+            console.log(asd);
             history.push({
                 pathname: '/QnA',
                 state: {
                     phone: qnaRegister.phone,
                     email: qnaRegister.email,
-                    title: qnaRegister.titles,
+                    title: qnaRegister.title,
                     edit: qnaRegister.edit,
                     password: qnaRegister.password,
                 },

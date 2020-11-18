@@ -14,7 +14,7 @@ const Board = ({ logout }) => {
     const [call, setCall] = useState([]);
     let URL =
         // 'http://localhost:8080/SpringFileBoardPR/board/connect.do?name=testkim';
-        'http://localhost:8080/controller/sample/sendList.do';
+        'http://localhost:8080/SpringRest/list.do';
 
     useEffect(() => {
         const users = async () => {

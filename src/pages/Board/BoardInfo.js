@@ -16,11 +16,12 @@ import { Link } from 'react-router-dom';
 const BoardInfo = ({ key, board, onClick }) => {
     return (
         <tr onClick={onClick}>
-            <td>{board.mno}</td>
+            <td>{board.num}</td>
+            <td>{board.author}</td>
             <td className="tit">
-                <Link>{board.firstName}</Link>
+                <Link>{board.title}</Link>
             </td>
-            <td>{board.lastName}</td>
+            <td>{board.writeday}</td>
             {/* <td>{board.views}</td> */}
         </tr>
     );
