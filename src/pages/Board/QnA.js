@@ -1,58 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import '../../css/QnA.css';
 import QnAInfo from './QnAInfo';
 
-const QnA = ({ logout }) => {
+const QnA = ({ logout, qnaRegister }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [selectedKey, setSelectedKey] = useState(-1);
-    const qna = [
-        {
-            id: 1,
-            title: '곽유신 팀장님 감사합니다.',
-            date: '2020.11.03',
-            views: 5,
-        },
-        {
-            id: 2,
-            title: '김현수 팀장님 감사합니다.',
-            date: '2020.10.13',
-            views: 35,
-        },
-        {
-            id: 3,
-            title: '박혜원 팀장님 감사합니다.',
-            date: '2020.10.06',
-            views: 34,
-        },
-        {
-            id: 4,
-            title: '손지성 팀장님 감사합니다.',
-            date: '2020.10.01',
-            views: 66,
-        },
-        {
-            id: 5,
-            title: '송난 팀장님 감사합니다.',
-            date: '2020.09.27',
-            views: 69,
-        },
-        {
-            id: 6,
-            title: '함영우 팀장님 감사합니다.',
-            date: '2020.09.20',
-            views: 86,
-        },
-        {
-            id: 7,
-            title: '흠 너무 좋은데요?',
-            date: '2020.0917',
-            views: 1111,
-        },
-    ];
+    const location = useLocation();
+    useEffect(() => {
+        console.log(location.state);
+    }, [location]);
+    const qna = [];
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
     };
@@ -60,20 +21,19 @@ const QnA = ({ logout }) => {
     const handleClick = (key) => {
         setSelectedKey(key);
     };
-    console.log(selectedKey + 1);
 
-    useEffect(() => {
-        const items = qna.filter((data) => {
-            if (searchTerm === null) {
-                return data;
-            } else if (data.title.toLowerCase().includes(searchTerm)) {
-                return data;
-            }
-        });
-        setSearchResult(items);
-    }, [searchTerm]);
+    // useEffect(() => {
+    //     const items = qna.filter((data) => {
+    //         if (searchTerm === null) {
+    //             return data;
+    //         } else if (data.title.toLowerCase().includes(searchTerm)) {
+    //             return data;
+    //         }
+    //     });
+    //     setSearchResult(items);
+    // }, [searchTerm]);
     //더미 데이터만큼 map사용
-    const listQna = searchResult.map((QnA, i) => {
+    const listQna = qna.map((QnA, i) => {
         // <tr onClick={handleClick}>
         //     <td>{QnA.id}</td>
         //     <td className="tit">{QnA.title}</td>
