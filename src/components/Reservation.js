@@ -2,32 +2,37 @@ import React,{useState} from 'react';
 import '../css/Reservation.css'
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { Event } from '@material-ui/icons';
 const Reservation = () => {
     var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     
-    const price = [10000,15000,20000,50000,30000]
     const [email,setEmail]=useState('')
-
-    const emailCheck=()=>{
-    const myEmail=document.getElementById('email')
-    if(regExp.test(myEmail)==true) {
-        alert('이메일이 확인되었습니다')
-        return true;
+    /*const emailCheck=(e)=>{
+    if(regExp.test(email)) {
+        e.preventDefault();
     }else{
-        setEmail('이메일을 확인해주세요')
-        return false;
-        //계속 렌더링 되는 중
+        e.preventDefault();
     } 
+}*/
+const onchangeEmail=(e)=>{
+    setEmail(e.target.value)
 }
-    // const money=()=>{
-    //     if((document.getElementById('home').value='주거시설') === price[0] ){
-    //         console.log("주거시설");
-    //     }
-    // }
-    // money()
-    var a = document.getElementsByTagName("input");
-    console.dir(a);
 
+const radioCheck=()=>{
+    if(document.getElementById('home').checked && document.getElementById('infor').checked){
+        alert('확인되었습니다')
+    }else if(document.getElementById('education').checked && document.getElementById('infor').checked){
+        alert('확인되었습니다.')
+    }else if(document.getElementById('medical').checked && document.getElementById('infor').checked){
+        alert('확인되었습니다.')
+    }else if(document.getElementById('public').checked && document.getElementById('infor').checked){
+        alert('확인되었습니다.')
+    }else if(document.getElementById('food').checked && document.getElementById('infor').checked){
+        alert('확인되었습니다.')
+    }else{
+        alert('청소분류와 개인정보수집 모두 체크해주세요')
+    }
+}
     return (
         <div>
         <Navbar/>
@@ -37,27 +42,27 @@ const Reservation = () => {
             <span className ="background" id="tit">청소분류*</span>
             <div className ="choose-1">
                 <label htmlFor="home">주거시설</label>
-                <input type="radio" id="home" name="rad1" value="주거시설"/>
+                <input type="radio" id="home" name="rad1" value='주거시설'/>
             </div>
             
             <div className ="choose-1">
                 <label htmlFor="education">교육시설</label>
-                <input type="radio" id="education" name="rad1" value="교육시설"/>
+                <input type="radio" id="education" name="rad1" value='교육시설'/>
             </div>
 
             <div className ="choose-1">
                 <label htmlFor="medical">의료시설</label>
-                <input type="radio" id="medical" name="rad1" value="의료시설"/>
+                <input type="radio" id="medical" name="rad1" value='의료시설'/>
             </div>
 
             <div className ="choose-1">
                 <label htmlFor="public">공공시설</label>
-                <input type="radio" id="public" name="rad1" value="공공시설"/>
+                <input type="radio" id="public" name="rad1" value='공공시설'/>
             </div>
 
             <div className ="choose-1">
                 <label htmlFor="food">요식업</label>
-                <input type="radio" id="food" name="rad1" value="요식업"/>
+                <input type="radio" id="food" name="rad1" value='요식업'/>
             </div>
         </div>
 
@@ -90,12 +95,13 @@ const Reservation = () => {
             </div>
             <div className ="choose2">
                 <span className ="background" id="tit">평수*</span>
-                <input type="text" className ="pyung-txt" id="pyeng" maxLength="4"/>
+                <input type="text" className ="pyung-txt" id="pyeng" maxLength="4" placeholder="숫자로 정확히 입력해주세요"/>
+                <span> </span>
                 <span className ="intro">금액은 실평수가 아닌 분양평수 기준으로 책정합니다.</span>
             </div>
             <div className ="choose2">
                 <span className ="background" id="tit">이름*</span>
-                <input type="text" className ="name" maxlength="4"/> 
+                <input type="text" className ="name" maxlength="4" placeholder="한글로 입력해주세요"/> 
             </div>
             <div className ="choose2">
                 <span className ="background" id="tit">연락처*</span>
@@ -105,9 +111,12 @@ const Reservation = () => {
                 <form>
                     <span className ="background" id="tit">E-Mail</span>
                     <label htmlFor="email"></label>
-                    <input type="text" id="email" name="email"/>
-                    <button className ="email_btn" onClick={emailCheck}>이메일 확인</button>
-                    <div className="reserv_mail">{email}</div>
+                    <input type="text" id="email" name="email" onChange={onchangeEmail} value={email}/>
+                    <div className="reserv_mail">
+                        {regExp.test(email)? 
+                        <span>이메일이 확인되었습니다</span>
+                    : <span>이메일을 입력해주세요</span>}
+                    </div>
                 </form>	
             </div>
             <div className="choose2">
@@ -237,10 +246,10 @@ const Reservation = () => {
             </div>
             <div className ="infor-check">
                 <form name="formcheck">
-                    <input type="checkbox" id="infor" name="infor" />
+                    <input type="checkbox" id="infor" name="infor"/>
                     <label htmlFor="infor">개인정보 수집 및 이용안내에 동의합니다.</label>
                 </form>
-                <input type="submit" action="#" value="신청하기" className ="btn" id="sub"/>
+                <input type="submit" action="#" value="신청하기" className ="btn" id="sub" onClick={radioCheck}/>
             </div>
             
     </div>
