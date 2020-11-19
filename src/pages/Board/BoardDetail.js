@@ -12,7 +12,7 @@ const Board = ({ logout }) => {
     const [searchResults, setSearchResults] = useState([]);
     const [selectedKey, setSelectedKey] = useState(-1);
     const [call, setCall] = useState([]);
-    const divide = '제목';
+    console.log(call);
     let URL =
         // 'http://localhost:8080/SpringFileBoardPR/board/connect.do?name=testkim';
         'http://localhost:8080/SpringRest/list.do';
@@ -29,37 +29,17 @@ const Board = ({ logout }) => {
         users();
     }, []);
 
+    const listDetail = call.map((detail) => {
+        return (
+            <tr>
+                <td>{detail.content}</td>
+            </tr>
+        );
+    });
+
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
     };
-    const handleClick = (key) => {
-        setSelectedKey(key);
-    };
-
-    const items = call.filter((data) => {
-        if (searchTerm === null) {
-            return data;
-        } else if (data.title.toLowerCase().includes(searchTerm)) {
-            return data;
-        } else if (data.author.toLowerCase().includes(searchTerm)) {
-            return data;
-        }
-    });
-
-    const listItem = items.map((calls, i) => {
-        return (
-            <>
-                <BoardInfo
-                    key={i}
-                    board={calls}
-                    details={calls}
-                    // onClick={() => {
-                    //     handleClick(i);
-                    // }}
-                />
-            </>
-        );
-    });
 
     return (
         <>
@@ -100,7 +80,7 @@ const Board = ({ logout }) => {
                     </button>
                 </form>
                 <p className="table_num">
-                    <span>{listItem.length}</span>건
+                    <span></span>건
                 </p>
 
                 {/* 공지사항 리스트 */}
@@ -113,7 +93,7 @@ const Board = ({ logout }) => {
                             <th>시간</th>
                         </tr>
                     </thead>
-                    <tbody>{listItem}</tbody>
+                    <tbody>{{ listDetail }}</tbody>
                 </table>
             </div>
             <Footer />

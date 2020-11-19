@@ -10,6 +10,7 @@ import LogIn from '../pages/LogIn';
 import InfoInput from '../pages/InfoInput';
 import MemberModifiy from '../pages/MemberModifiy';
 import Board from '../pages/Board/Board';
+import BoardDetail from '../pages/Board/BoardDetail';
 import QnA from '../pages/Board/QnA';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
 import ReservationConfirm from '../pages/ReservationConfirm/ReservationConfirm';
@@ -59,6 +60,10 @@ const AppRouter = () => {
 
                 <Route exact path="/Board">
                     <Board logout={logout} />
+                </Route>
+
+                <Route exact path="/BoardDetail">
+                    <BoardDetail />
                 </Route>
                 <Route exact path="/QnA">
                     <QnA logout={logout} />

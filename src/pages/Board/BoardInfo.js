@@ -1,29 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BoardDetail from './BoardDetail';
 
-// const BoardInfo = ({ key, board, onClick }) => {
-//     return (
-//         <tr onClick={onClick}>
-//             <td>{board.data.mno}</td>
-//             <td className="tit">
-//                 <Link>{board.data.firstName}</Link>
-//             </td>
-//             <td>{board.data.lastName}</td>
-//             {/* <td>{board.views}</td> */}
-//         </tr>
-//     );
-// };
-const BoardInfo = ({ key, board, onClick }) => {
+const BoardInfo = ({ key, board, details }) => {
+    const detail = () => {
+        return <BoardDetail board={board} />;
+    };
     return (
-        <tr onClick={onClick}>
-            <td>{board.num}</td>
-            <td>{board.author}</td>
-            <td className="tit">
-                <Link>{board.title}</Link>
-            </td>
-            <td>{board.writeday}</td>
-            {/* <td>{board.views}</td> */}
-        </tr>
+        <>
+            <tr
+            // onClick={() => {
+            //     console.log(details);
+            //     return <BoardDetail board={board} />;
+            // }}
+            >
+                <td>{board.num}</td>
+                <td className="tit">
+                    <Link to="/BoardDetail">{board.title}</Link>
+                </td>
+                <td>{board.author}</td>
+                <td>{board.writeday.substr(0, 10)}</td>
+                {/* <td>{board}</td> */}
+            </tr>
+        </>
     );
 };
 
