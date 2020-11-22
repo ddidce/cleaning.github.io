@@ -1,49 +1,54 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, useHistory, useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import BoardInfo from './BoardInfo';
 import '../../css/Board.css';
 import axios from 'axios';
 
-const Board = ({ logout }) => {
+const BoardDetail = ({ location, logout }) => {
+    // const BoardDetail = ({ logout, board }) => {
     // 검색기능
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [selectedKey, setSelectedKey] = useState(-1);
     const [call, setCall] = useState([]);
-    console.log(call);
-    let URL =
-        // 'http://localhost:8080/SpringFileBoardPR/board/connect.do?name=testkim';
-        'http://localhost:8080/SpringRest/list.do';
+    const history = useHistory();
+    const board = location.state.board;
+    // let URL =
+    //     // 'http://localhost:8080/SpringFileBoardPR/board/connect.do?name=testkim';
+    //     // `http://localhost:8080/SpringRest/retrieve.do?num=${call}`;
+    //     'http://localhost:8080/SpringRest/list.do';
+    // useEffect(() => {
+    //     const users = async () => {
+    //         try {
+    //             const response = await axios.get(URL);
+    //             setCall(response.data);
+    //         } catch (error) {
+    //             // alert('에러입니다,');
+    //         }
+    //     };
+    //     users();
+    // }, []);
 
-    useEffect(() => {
-        const users = async () => {
-            try {
-                const response = await axios.get(URL);
-                setCall(response.data);
-            } catch (error) {
-                // alert('에러입니다,');
-            }
-        };
-        users();
-    }, []);
+    console.log(location);
+    //filter함수 사용
+    // const listDetail = call.map((asd) => {
+    //     console.log(asd.content);
+    //     return (
+    //         <tr>
+    //             <td>{asd.content}</td>
+    //         </tr>
+    //     );
+    // });
 
-    const listDetail = call.map((detail) => {
-        return (
-            <tr>
-                <td>{detail.content}</td>
-            </tr>
-        );
-    });
-
-    const handleChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
+    // for (let i = 0; i < call.length; i++) {
+    //     console.log(`${call[i].content}`);
+    // }
 
     return (
         <>
-            <Navbar logout={logout} />
+            <Navbar />
             <div className="sub_visual sub_visual06">
                 <div className="inner">
                     <h2>공지사항</h2>
@@ -72,12 +77,8 @@ const Board = ({ logout }) => {
                         className="input_search"
                         name="keyword"
                         id="keyword"
-                        onChange={handleChange}
-                        value={searchTerm}
                     />
-                    <button type="submit" onClick={searchTerm}>
-                        검색
-                    </button>
+                    <button type="submit">검색</button>
                 </form>
                 <p className="table_num">
                     <span></span>건
@@ -93,11 +94,11 @@ const Board = ({ logout }) => {
                             <th>시간</th>
                         </tr>
                     </thead>
-                    <tbody>{{ listDetail }}</tbody>
+                    <tbody>{board.content}</tbody>
                 </table>
             </div>
             <Footer />
         </>
     );
 };
-export default Board;
+export default BoardDetail;

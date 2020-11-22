@@ -62,9 +62,18 @@ const AppRouter = () => {
                     <Board logout={logout} />
                 </Route>
 
-                <Route exact path="/BoardDetail">
-                    <BoardDetail />
-                </Route>
+                <Route
+                    exact
+                    path="/BoardDetail"
+                    render={(props) => (
+                        <BoardDetail
+                            logout={logout}
+                            // 렌더할때 BoardInfo에서 세팅해둔 값을
+                            // props.location으로 받음
+                            location={props.location}
+                        />
+                    )}
+                ></Route>
                 <Route exact path="/QnA">
                     <QnA logout={logout} />
                 </Route>

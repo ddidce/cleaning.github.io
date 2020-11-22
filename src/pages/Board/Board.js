@@ -11,33 +11,34 @@ const Board = ({ logout }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [selectedKey, setSelectedKey] = useState(-1);
-    const [call, setCall] = useState([]);
+    const [users, setUsers] = useState([null]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    // const [call, setCall] = useState([]);
     const divide = '제목';
-    let URL =
-        // 'http://localhost:8080/SpringFileBoardPR/board/connect.do?name=testkim';
-        'http://localhost:8080/SpringRest/list.do';
-
     useEffect(() => {
-        const users = async () => {
+        const fetchUsers = async () => {
             try {
-                const response = await axios.get(URL);
-                setCall(response.data);
-            } catch (error) {
-                // alert('에러입니다,');
+                // setUsers(null);
+                setLoading(true);
+                setError(null);
+                const response = await axios.get(
+                    'http://localhost:8080/SpringRest/list.do/',
+                );
+                setUsers(response.data);
+            } catch (e) {
+                setError(e);
             }
+            setLoading(false);
         };
-        users();
+        fetchUsers();
     }, []);
-
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
     };
-    const handleClick = (key) => {
-        setSelectedKey(key);
-    };
 
-    const items = call.filter((data) => {
-        if (searchTerm === null) {
+    const items = users.filter((data) => {
+        if (data === null) {
             return data;
         } else if (data.title.toLowerCase().includes(searchTerm)) {
             return data;
@@ -46,17 +47,10 @@ const Board = ({ logout }) => {
         }
     });
 
-    const listItem = items.map((calls, i) => {
+    const listItem = items.map((user, i) => {
         return (
             <>
-                <BoardInfo
-                    key={i}
-                    board={calls}
-                    details={calls}
-                    // onClick={() => {
-                    //     handleClick(i);
-                    // }}
-                />
+                <BoardInfo key={i} board={user} details={user} />
             </>
         );
     });
