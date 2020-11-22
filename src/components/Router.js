@@ -64,13 +64,13 @@ const AppRouter = () => {
 
                 <Route
                     exact
-                    path="/BoardDetail"
+                    path="/BoardDetail/:num"
                     render={(props) => (
                         <BoardDetail
                             logout={logout}
                             // 렌더할때 BoardInfo에서 세팅해둔 값을
                             // props.location으로 받음
-                            location={props.location}
+                            routeProps={props}
                         />
                     )}
                 ></Route>

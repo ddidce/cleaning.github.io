@@ -18,19 +18,7 @@ const BoardInfo = ({ key, board, details }) => {
     // state: undefined
     // }
 
-    location: console.log(board);
-    const detailPage = () => {
-        console.log(board);
-        if (board.num) {
-            return <BoardDetail />;
-        }
-        return (
-            <div>
-                <BoardDetail board={board} />
-                {console.log(board)}
-            </div>
-        );
-    };
+    // location: console.log(board);
     return (
         <>
             <tr key={board.num}>
@@ -41,7 +29,7 @@ const BoardInfo = ({ key, board, details }) => {
                     이때 클릭하면서 이동할떄 미리 세팅해둔 state를 가져감 */}
                     <Link
                         to={{
-                            pathname: '/BoardDetail',
+                            pathname: '/BoardDetail/' + board.num,
                             state: { board: board },
                         }}
                     >

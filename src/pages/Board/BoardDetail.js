@@ -6,32 +6,28 @@ import BoardInfo from './BoardInfo';
 import '../../css/Board.css';
 import axios from 'axios';
 
-const BoardDetail = ({ location, logout }) => {
+const BoardDetail = ({ routeProps, logout }) => {
     // const BoardDetail = ({ logout, board }) => {
     // 검색기능
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [selectedKey, setSelectedKey] = useState(-1);
-    const [call, setCall] = useState([]);
+    const [boardDetail, setBoardDetail] = useState([]);
     const history = useHistory();
-    const board = location.state.board;
-    // let URL =
-    //     // 'http://localhost:8080/SpringFileBoardPR/board/connect.do?name=testkim';
-    //     // `http://localhost:8080/SpringRest/retrieve.do?num=${call}`;
-    //     'http://localhost:8080/SpringRest/list.do';
-    // useEffect(() => {
-    //     const users = async () => {
-    //         try {
-    //             const response = await axios.get(URL);
-    //             setCall(response.data);
-    //         } catch (error) {
-    //             // alert('에러입니다,');
-    //         }
-    //     };
-    //     users();
-    // }, []);
+    useEffect(() => {
+        const users = async () => {
+            try {
+                let URL = `http://localhost:8080/SpringRest/retrieve.do?num=${routeProps.match.params.num}`;
+                const response = await axios.get(URL);
+                setBoardDetail(response.data);
+            } catch (error) {
+                // alert('에러입니다,');
+            }
+        };
+        users();
+    }, [routeProps]);
 
-    console.log(location);
+    console.log(boardDetail);
     //filter함수 사용
     // const listDetail = call.map((asd) => {
     //     console.log(asd.content);
@@ -48,7 +44,7 @@ const BoardDetail = ({ location, logout }) => {
 
     return (
         <>
-            <Navbar />
+            <Navbar logout={logout} />
             <div className="sub_visual sub_visual06">
                 <div className="inner">
                     <h2>공지사항</h2>
@@ -94,7 +90,7 @@ const BoardDetail = ({ location, logout }) => {
                             <th>시간</th>
                         </tr>
                     </thead>
-                    <tbody>{board.content}</tbody>
+                    <tbody>{boardDetail.content}</tbody>
                 </table>
             </div>
             <Footer />
