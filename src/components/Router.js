@@ -12,6 +12,14 @@ import MemberModifiy from '../pages/MemberModifiy';
 import Board from '../pages/Board/Board';
 import QnA from '../pages/Board/QnA';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
+import Reservation from '../components/Reservation';
+import DetailService from '../components/DetailService';
+import D_home from '../pages/D_home';
+import Public from '../pages/Public';
+import Education from '../pages/Education';
+import Medical from '../pages/Medical';
+import Food from '../pages/Food';
+
 import ReservationConfirm from '../pages/ReservationConfirm/ReservationConfirm';
 const AppRouter = () => {
     // console.log(isLoggedIn);
