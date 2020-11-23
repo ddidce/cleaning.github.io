@@ -14,6 +14,12 @@ import BoardDetail from '../pages/Board/BoardDetail';
 import QnA from '../pages/Board/QnA';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
 import ReservationConfirm from '../pages/ReservationConfirm/ReservationConfirm';
+import AboutCustom from '../components/AboutCustom';
+import CompanyInfo from '../components/CompanyInfo';
+import AS from '../components/AS';
+import Es from '../components/Es';
+import BS from '../components/BS';
+import GS from '../components/GS';
 
 const AppRouter = () => {
     // console.log(isLoggedIn);
@@ -79,6 +85,24 @@ const AppRouter = () => {
                 </Route>
                 <Route exact path="/QnAWriteForm">
                     <QnAWriteForm logout={logout} />
+                </Route>
+                <Route exact path="/AboutCustom">
+                    <AboutCustom />
+                </Route>
+                <Route exact path="/CompanyInfo">
+                    <CompanyInfo />
+                </Route>
+                <Route exact path="/AS">
+                    <AS />
+                </Route>
+                <Route exact path="/Es">
+                    <Es />
+                </Route>
+                <Route exact path="/BS">
+                    <BS />
+                </Route>
+                <Route exact path="/GS">
+                    <GS />
                 </Route>
             </Switch>
         </Router>
