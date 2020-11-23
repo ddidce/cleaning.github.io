@@ -18,7 +18,7 @@ const Work = () => {
                     <div>
                         <Link to="/House" className="icon">
                             <img src={House} alt="" />
-                            <h3>일반시설</h3>
+                            <h3>일반시설11</h3>
                         </Link>
                     </div>
                     <div>
