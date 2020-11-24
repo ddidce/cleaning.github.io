@@ -10,7 +10,7 @@ const QnAWriteForm = ({ logout }) => {
     const [titles, settitle] = useState('');
     const [edit, setEdit] = useState('');
     const [password, setPassword] = useState('');
-    const BASE_URL = `http://localhost:8080/controller/sample/sendMap.do`;
+    // const BASE_URL = 'http://localhost:8080/SpringRest/write.do';
 
     const onchangePhone = (e) => {
         setPhone(e.target.value);
@@ -41,19 +41,19 @@ const QnAWriteForm = ({ logout }) => {
         };
 
         console.log(qnaRegister);
-        axios.post(BASE_URL, { qnaRegister }).then((asd) => {
-            console.log(asd);
-            history.push({
-                pathname: '/QnA',
-                state: {
-                    phone: qnaRegister.phone,
-                    email: qnaRegister.email,
-                    title: qnaRegister.title,
-                    edit: qnaRegister.edit,
-                    password: qnaRegister.password,
-                },
-            });
-        });
+        //     axios.post(BASE_URL, { qnaRegister }).then((asd) => {
+        //         console.log(asd);
+        //         history.push({
+        //             pathname: '/QnA',
+        //             state: {
+        //                 phone: qnaRegister.phone,
+        //                 email: qnaRegister.email,
+        //                 title: qnaRegister.title,
+        //                 edit: qnaRegister.edit,
+        //                 password: qnaRegister.password,
+        //             },
+        //         });
+        //     });
     };
     return (
         <>

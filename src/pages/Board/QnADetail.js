@@ -18,7 +18,7 @@ const BoardDetail = ({ routeProps, logout }) => {
     useEffect(() => {
         const users = async () => {
             try {
-                let URL = `http://localhost:8080/SpringRest/retrieve.do?num=${routeProps.match.params.num}`;
+                let URL = `http://localhost:8080/SpringRest/qna.do?num=${routeProps.match.params.num}`;
                 const response = await axios.get(URL);
                 setBoardDetail(response.data);
             } catch (error) {

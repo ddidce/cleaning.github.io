@@ -12,6 +12,7 @@ import MemberModifiy from '../pages/MemberModifiy';
 import Board from '../pages/Board/Board';
 import BoardDetail from '../pages/Board/BoardDetail';
 import QnA from '../pages/Board/QnA';
+import QnADetail from '../pages/Board/QnADetail';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
 import ReservationConfirm from '../pages/ReservationConfirm/ReservationConfirm';
 
@@ -76,6 +77,10 @@ const AppRouter = () => {
                 ></Route>
                 <Route exact path="/QnA">
                     <QnA logout={logout} />
+                </Route>
+
+                <Route>
+                    <QnADetail exact path="/QnADetail" />
                 </Route>
                 <Route exact path="/QnAWriteForm">
                     <QnAWriteForm logout={logout} />
