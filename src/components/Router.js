@@ -79,12 +79,16 @@ const AppRouter = () => {
                     <QnA logout={logout} />
                 </Route>
 
-                <Route>
-                    <QnADetail exact path="/QnADetail" />
-                </Route>
                 <Route exact path="/QnAWriteForm">
                     <QnAWriteForm logout={logout} />
                 </Route>
+                <Route
+                    exact
+                    path="/QnADetail/:seq"
+                    render={(props) => (
+                        <QnADetail logout={logout} routeProps={props} />
+                    )}
+                ></Route>
             </Switch>
         </Router>
     );

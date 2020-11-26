@@ -10,7 +10,12 @@ const QnAWriteForm = ({ logout }) => {
     const [titles, settitle] = useState('');
     const [edit, setEdit] = useState('');
     const [password, setPassword] = useState('');
-    // const BASE_URL = 'http://localhost:8080/SpringRest/write.do';
+    const BASE_URL = `http://localhost:8080/SpringRest/qna.do`;
+    const Headers = {
+        'Access-Control-Allow-Credentials': 'true',
+        'Content-type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
+    };
 
     const onchangePhone = (e) => {
         setPhone(e.target.value);
@@ -36,24 +41,58 @@ const QnAWriteForm = ({ logout }) => {
             phone: phone,
             email: email,
             title: titles,
-            edit: edit,
-            password: password,
+            content: edit,
+            pwd: password,
         };
 
         console.log(qnaRegister);
-        //     axios.post(BASE_URL, { qnaRegister }).then((asd) => {
-        //         console.log(asd);
-        //         history.push({
-        //             pathname: '/QnA',
-        //             state: {
-        //                 phone: qnaRegister.phone,
-        //                 email: qnaRegister.email,
-        //                 title: qnaRegister.title,
-        //                 edit: qnaRegister.edit,
-        //                 password: qnaRegister.password,
-        //             },
-        //         });
-        //     });
+        try {
+            axios
+                .post(
+                    BASE_URL,
+                    { qnaRegister },
+                    //{ withCredentials: true },
+                    { Headers },
+                    console.log(qnaRegister),
+                )
+                .catch(function (error) {
+                    if (error.response) {
+                        // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                    } else if (error.request) {
+                        // 요청이 이루어 졌으나 응답을 받지 못했습니다.
+                        // `error.request`는 브라우저의 XMLHttpRequest 인스턴스 또는
+                        // Node.js의 http.ClientRequest 인스턴스입니다.
+                        console.log(error.request);
+                    } else {
+                        // 오류를 발생시킨 요청을 설정하는 중에 문제가 발생했습니다.
+                        console.log('Error', error.message);
+                    }
+                    console.log(error.config);
+                })
+                // .then((response) => setPhone(response.data.phone))
+                // .then((response) => settitle(response.data.titles))
+                // .then((response) => setEmail(response.data.email))
+                // .then((response) => setEdit(response.data.content))
+                // .then((response) => setPassword(response.data.pwd))
+                .then((asd) => {
+                    console.log(asd);
+                    history.push({
+                        pathname: '/QnA',
+                        state: {
+                            phone: qnaRegister.phone,
+                            email: qnaRegister.email,
+                            title: qnaRegister.title,
+                            content: qnaRegister.edit,
+                            pwd: qnaRegister.password,
+                        },
+                    });
+                });
+        } catch (error) {
+            console.log(error);
+        }
     };
     return (
         <>

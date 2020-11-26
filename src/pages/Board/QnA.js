@@ -12,10 +12,10 @@ const QnA = ({ logout, qnaRegister }) => {
     const [selectedKey, setSelectedKey] = useState(-1);
     const [users, setUsers] = useState([null]);
     const location = useLocation();
-    useEffect(() => {
-        const QnAInfo = location.state;
-        console.dir(QnAInfo);
-    }, [location]);
+    // useEffect(() => {
+    //     const QnAInfo = location.state;
+    //     console.dir(QnAInfo);
+    // }, [location]);
     useEffect(() => {
         const fetchUsers = async () => {
             try {

@@ -9,18 +9,15 @@ import axios from 'axios';
 const BoardDetail = ({ routeProps, logout }) => {
     // const BoardDetail = ({ logout, board }) => {
     // 검색기능
-    const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
-    const [selectedKey, setSelectedKey] = useState(-1);
-    const [boardDetail, setBoardDetail] = useState([]);
+    const [qnaDetail, setQnADetail] = useState([]);
     const history = useHistory();
     console.log(routeProps);
     useEffect(() => {
         const users = async () => {
             try {
-                let URL = `http://localhost:8080/SpringRest/qna.do?num=${routeProps.match.params.num}`;
+                let URL = `http://localhost:8080/SpringRest/qnaretrieve.do?seq=${routeProps.match.params.seq}`;
                 const response = await axios.get(URL);
-                setBoardDetail(response.data);
+                setQnADetail(response.data);
             } catch (error) {
                 // alert('에러입니다,');
             }
@@ -28,9 +25,9 @@ const BoardDetail = ({ routeProps, logout }) => {
         users();
     }, [routeProps]);
 
-    console.log(boardDetail);
+    console.log(qnaDetail);
     const backBtn = () => {
-        history.push('/Board');
+        history.push('/QnA');
     };
 
     return (
@@ -83,13 +80,21 @@ const BoardDetail = ({ routeProps, logout }) => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td className="b_content">{boardDetail.content}</td>
+                            <td className="q_content">{qnaDetail.content}</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <button className="b_Btn" onClick={backBtn}>
+                <button className="q_ListBtn" onClick={backBtn}>
                     목록
+                </button>
+
+                <button className="q_DelBtn" onClick={backBtn}>
+                    삭제
+                </button>
+
+                <button className="q_ModiBtn" onClick={backBtn}>
+                    수정
                 </button>
             </div>
             <Footer />
