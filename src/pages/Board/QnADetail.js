@@ -5,17 +5,20 @@ import Footer from '../../components/Footer';
 import BoardInfo from './BoardInfo';
 import '../../css/Board.css';
 import axios from 'axios';
+import { wait } from '@testing-library/react';
+import QnAUpdateForm from './QnAUpdateForm';
 
 const BoardDetail = ({ routeProps, logout }) => {
     // const BoardDetail = ({ logout, board }) => {
     // 검색기능
     const [qnaDetail, setQnADetail] = useState([]);
+    const [delBtn, setDelBtn] = useState([]);
     const history = useHistory();
+    let URL = `http://localhost:8080/SpringRest/qnaretrieve.do?seq=${routeProps.match.params.seq}`;
     console.log(routeProps);
     useEffect(() => {
         const users = async () => {
             try {
-                let URL = `http://localhost:8080/SpringRest/qnaretrieve.do?seq=${routeProps.match.params.seq}`;
                 const response = await axios.get(URL);
                 setQnADetail(response.data);
             } catch (error) {
@@ -29,6 +32,23 @@ const BoardDetail = ({ routeProps, logout }) => {
     const backBtn = () => {
         history.push('/QnA');
     };
+
+    const modiBtn = () => {
+        history.push('/QnAUpdateForm/2');
+    };
+
+    const deleteBtn = async () => {
+        try {
+            let URL = `http://localhost:8080/SpringRest/qnadelete.do?seq=${routeProps.match.params.seq}`;
+            const response = await axios.get(URL);
+            setDelBtn(response.data);
+        } catch (error) {
+            // alert('에러입니다,');
+        }
+        alert('삭제되었습니다!');
+        history.push('/QnA');
+    };
+    console.log(delBtn);
 
     return (
         <>
@@ -89,12 +109,19 @@ const BoardDetail = ({ routeProps, logout }) => {
                     목록
                 </button>
 
-                <button className="q_DelBtn" onClick={backBtn}>
+                <button className="q_DelBtn" onClick={deleteBtn} value={delBtn}>
                     삭제
                 </button>
 
-                <button className="q_ModiBtn" onClick={backBtn}>
-                    수정
+                <button className="q_ModiBtn">
+                    <Link
+                        to={{
+                            pathname: '/QnAUpdateForm/' + qnaDetail.seq,
+                            state: { qnaDetail: qnaDetail },
+                        }}
+                    >
+                        수정
+                    </Link>
                 </button>
             </div>
             <Footer />

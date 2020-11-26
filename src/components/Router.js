@@ -15,6 +15,7 @@ import QnA from '../pages/Board/QnA';
 import QnADetail from '../pages/Board/QnADetail';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
 import ReservationConfirm from '../pages/ReservationConfirm/ReservationConfirm';
+import QnAUpdateForm from '../pages/Board/QnAUpdateForm';
 
 const AppRouter = () => {
     // console.log(isLoggedIn);
@@ -87,6 +88,14 @@ const AppRouter = () => {
                     path="/QnADetail/:seq"
                     render={(props) => (
                         <QnADetail logout={logout} routeProps={props} />
+                    )}
+                ></Route>
+
+                <Route
+                    exact
+                    path="/QnAUpdateForm/:seq"
+                    render={(props) => (
+                        <QnAUpdateForm logout={logout} routeProps={props} />
                     )}
                 ></Route>
             </Switch>

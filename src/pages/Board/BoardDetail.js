@@ -29,9 +29,9 @@ const BoardDetail = ({ routeProps, logout }) => {
     }, [routeProps]);
 
     console.log(boardDetail);
-    const backBtn = () => {
-        history.push('/Board');
-    };
+    // const backBtn = () => {
+    //     history.push('/Board');
+    // };
 
     return (
         <>
@@ -88,9 +88,7 @@ const BoardDetail = ({ routeProps, logout }) => {
                     </tbody>
                 </table>
 
-                <button className="b_Btn" onClick={backBtn}>
-                    목록
-                </button>
+                <button className="b_Btn">목록</button>
             </div>
             <Footer />
         </>
