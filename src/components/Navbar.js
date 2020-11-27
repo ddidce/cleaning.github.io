@@ -22,13 +22,13 @@ const Navbar = ({ logout }) => {
                             <Link to="/">홈</Link>
                         </li>
                         <li className="nav-menu">
-                            <Link to="/About">회사소개</Link>
+                            <Link to="/CompanyInfo">회사소개</Link>
                         </li>
                         <li className="nav-menu">
                             <Link to="/DetailService">서비스</Link>
                         </li>
                         <li className="nav-menu">
-                            <Link to="/Reservation">견적</Link>
+                            <Link to="/AboutCustom">고객지원</Link>
                         </li>
                         <li className="nav-menu">
                             <Link to="/Board">공지사항</Link>

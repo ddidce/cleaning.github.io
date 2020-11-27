@@ -7,10 +7,10 @@ import axios from 'axios';
 const QnAWriteForm = ({ logout }) => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-    const [titls, settitle] = useState('');
+    const [titles, settitle] = useState('');
     const [edit, setEdit] = useState('');
     const [password, setPassword] = useState('');
-    const BASE_URL = `http://localhost:8080/controller/sample/sendList.do`;
+    const BASE_URL = `http://localhost:8080/controller/sample/sendMap.do`;
 
     const onchangePhone = (e) => {
         setPhone(e.target.value);
@@ -35,16 +35,25 @@ const QnAWriteForm = ({ logout }) => {
         const qnaRegister = {
             phone: phone,
             email: email,
-            title: titls,
+            title: titles,
             edit: edit,
             password: password,
         };
+
         console.log(qnaRegister);
-        axios.post(BASE_URL, { qnaRegister }).then((res) => {
-            console.log(res);
-            console.log(res.data);
+        axios.post(BASE_URL, { qnaRegister }).then((asd) => {
+            console.log(asd);
+            history.push({
+                pathname: '/QnA',
+                state: {
+                    phone: qnaRegister.phone,
+                    email: qnaRegister.email,
+                    title: qnaRegister.title,
+                    edit: qnaRegister.edit,
+                    password: qnaRegister.password,
+                },
+            });
         });
-        history.push('/QnA');
     };
     return (
         <>
@@ -109,7 +118,7 @@ const QnAWriteForm = ({ logout }) => {
                         <input
                             type="text"
                             name="b_title"
-                            value={titls}
+                            value={titles}
                             maxLength="100"
                             onChange={onchangeTitle}
                         />

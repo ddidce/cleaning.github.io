@@ -1,59 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, useHistory, useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import BoardInfo from './BoardInfo';
 import '../../css/Board.css';
 import axios from 'axios';
 
-const Board = ({ logout }) => {
+const BoardDetail = ({ routeProps, logout }) => {
+    // const BoardDetail = ({ logout, board }) => {
     // 검색기능
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [selectedKey, setSelectedKey] = useState(-1);
-    const [users, setUsers] = useState([null]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    // const [call, setCall] = useState([]);
-    const divide = '제목';
+    const [boardDetail, setBoardDetail] = useState([]);
+    const history = useHistory();
     useEffect(() => {
-        const fetchUsers = async () => {
+        const users = async () => {
             try {
-                // setUsers(null);
-                setLoading(true);
-                setError(null);
-                const response = await axios.get(
-                    'http://localhost:8080/SpringRest/list.do/',
-                );
-                setUsers(response.data);
-            } catch (e) {
-                setError(e);
+                let URL = `http://localhost:8080/SpringRest/retrieve.do?num=${routeProps.match.params.num}`;
+                const response = await axios.get(URL);
+                setBoardDetail(response.data);
+            } catch (error) {
+                // alert('에러입니다,');
             }
-            setLoading(false);
         };
-        fetchUsers();
-    }, []);
-    const handleChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
+        users();
+    }, [routeProps]);
 
-    const items = users.filter((data) => {
-        if (data === null) {
-            return data;
-        } else if (data.title.toLowerCase().includes(searchTerm)) {
-            return data;
-        } else if (data.author.toLowerCase().includes(searchTerm)) {
-            return data;
-        }
-    });
+    console.log(boardDetail);
+    //filter함수 사용
+    // const listDetail = call.map((asd) => {
+    //     console.log(asd.content);
+    //     return (
+    //         <tr>
+    //             <td>{asd.content}</td>
+    //         </tr>
+    //     );
+    // });
 
-    const listItem = items.map((user, i) => {
-        return (
-            <>
-                <BoardInfo key={i} board={user} details={user} />
-            </>
-        );
-    });
+    // for (let i = 0; i < call.length; i++) {
+    //     console.log(`${call[i].content}`);
+    // }
 
     return (
         <>
@@ -86,15 +73,11 @@ const Board = ({ logout }) => {
                         className="input_search"
                         name="keyword"
                         id="keyword"
-                        onChange={handleChange}
-                        value={searchTerm}
                     />
-                    <button type="submit" onClick={searchTerm}>
-                        검색
-                    </button>
+                    <button type="submit">검색</button>
                 </form>
                 <p className="table_num">
-                    <span>{listItem.length}</span>건
+                    <span></span>건
                 </p>
 
                 {/* 공지사항 리스트 */}
@@ -107,11 +90,11 @@ const Board = ({ logout }) => {
                             <th>시간</th>
                         </tr>
                     </thead>
-                    <tbody>{listItem}</tbody>
+                    <tbody>{boardDetail.content}</tbody>
                 </table>
             </div>
             <Footer />
         </>
     );
 };
-export default Board;
+export default BoardDetail;

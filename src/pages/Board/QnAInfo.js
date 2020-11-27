@@ -3,10 +3,10 @@ import React from 'react';
 const QnAInfo = ({ key, QnA, onClick }) => {
     return (
         <tr onClick={onClick}>
-            <td>{QnA.id}</td>
+            <td>{QnA.email}</td>
             <td className="tit">{QnA.title}</td>
-            <td>{QnA.date}</td>
-            <td>{QnA.views}</td>
+            <td>{QnA.edit}</td>
+            {/* <td>{QnA.views}</td> */}
         </tr>
     );
 };

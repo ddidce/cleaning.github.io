@@ -10,17 +10,17 @@ import LogIn from '../pages/LogIn';
 import InfoInput from '../pages/InfoInput';
 import MemberModifiy from '../pages/MemberModifiy';
 import Board from '../pages/Board/Board';
+import BoardDetail from '../pages/Board/BoardDetail';
 import QnA from '../pages/Board/QnA';
 import QnAWriteForm from '../pages/Board/QnAWriteForm';
-import Reservation from '../components/Reservation';
-import DetailService from '../components/DetailService';
-import D_home from '../pages/D_home';
-import Public from '../pages/Public';
-import Education from '../pages/Education';
-import Medical from '../pages/Medical';
-import Food from '../pages/Food';
-
 import ReservationConfirm from '../pages/ReservationConfirm/ReservationConfirm';
+import AboutCustom from '../components/AboutCustom';
+import CompanyInfo from '../components/CompanyInfo';
+import AS from '../components/AS';
+import Es from '../components/Es';
+import BS from '../components/BS';
+import GS from '../components/GS';
+
 const AppRouter = () => {
     // console.log(isLoggedIn);
     const [user, setUser] = useState(null);
@@ -68,39 +68,41 @@ const AppRouter = () => {
                     <Board logout={logout} />
                 </Route>
 
-                <Route exact path="/Reservation">
-                    <Reservation />
-                </Route>
-
-                <Route exact path="/DetailService">
-                    <DetailService />
-                </Route>
-
-                <Route exact path="/DetailService/Home">
-                    <D_home />
-                </Route>
-
-                <Route exact path="/DetailService/Public">
-                    <Public />
-                </Route>
-
-                <Route exact path="/DetailService/Education">
-                    <Education />
-                </Route>
-
-                <Route exact path="/DetailService/Medical">
-                    <Medical />
-                </Route>
-
-                <Route exact path="/DetailService/Food">
-                    <Food />
-                </Route>
-
+                <Route
+                    exact
+                    path="/BoardDetail/:num"
+                    render={(props) => (
+                        <BoardDetail
+                            logout={logout}
+                            // 렌더할때 BoardInfo에서 세팅해둔 값을
+                            // props.location으로 받음
+                            routeProps={props}
+                        />
+                    )}
+                ></Route>
                 <Route exact path="/QnA">
                     <QnA logout={logout} />
                 </Route>
                 <Route exact path="/QnAWriteForm">
                     <QnAWriteForm logout={logout} />
+                </Route>
+                <Route exact path="/AboutCustom">
+                    <AboutCustom />
+                </Route>
+                <Route exact path="/CompanyInfo">
+                    <CompanyInfo />
+                </Route>
+                <Route exact path="/AS">
+                    <AS />
+                </Route>
+                <Route exact path="/Es">
+                    <Es />
+                </Route>
+                <Route exact path="/BS">
+                    <BS />
+                </Route>
+                <Route exact path="/GS">
+                    <GS />
                 </Route>
             </Switch>
         </Router>
