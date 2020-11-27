@@ -115,6 +115,12 @@ const QnA = ({ logout, qnaRegister }) => {
 
                 {/* 공지사항 리스트  */}
                 <table className="table_list">
+                    <thead>
+                        <tr>
+                            <th>제목</th>
+                            <th>이메일</th>
+                        </tr>
+                    </thead>
                     <tbody>{listQna}</tbody>
                 </table>
             </div>
