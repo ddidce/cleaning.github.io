@@ -428,18 +428,18 @@ const D_home = () => {
                     <h2 className="h2_hom">청소가격(부가세별도)</h2>
                     <table className="tab_hom">
                         <tr>
-                            <th>주거시설</th>
-                            <th>공공기관</th>
-                            <th>교육기관</th>
-                            <th>의료기관</th>
-                            <th>요식업</th>
+                            <th className="tab_th">주거시설</th>
+                            <th className="tab_th">공공기관</th>
+                            <th className="tab_th">교육기관</th>
+                            <th className="tab_th">의료기관</th>
+                            <th className="tab_th">요식업</th>
                         </tr>
                         <tr>
-                            <td>평당 10,000원</td>
-                            <td>평당 15,000원</td>
-                            <td>평당 20,000원</td>
-                            <td>평당 50,000원</td>
-                            <td>평당 30,000원</td>
+                            <td className="tab_td">평당 10,000원</td>
+                            <td className="tab_td">평당 15,000원</td>
+                            <td className="tab_td">평당 20,000원</td>
+                            <td className="tab_td">평당 50,000원</td>
+                            <td className="tab_td">평당 30,000원</td>
                         </tr>
                     </table>
                     <p className="tab_bottom">

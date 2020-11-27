@@ -4,17 +4,30 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import '../../css/QnA.css';
 import QnAInfo from './QnAInfo';
+import axios from 'axios';
 
 const QnA = ({ logout, qnaRegister }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResult, setSearchResult] = useState({});
     const [selectedKey, setSelectedKey] = useState(-1);
+    const [users, setUsers] = useState([null]);
     const location = useLocation();
+    // useEffect(() => {
+    //     const QnAInfo = location.state;
+    //     console.dir(QnAInfo);
+    // }, [location]);
     useEffect(() => {
-        const QnAInfo = location.state;
-        console.dir(QnAInfo);
-    }, [location]);
-    const qna = [];
+        const fetchUsers = async () => {
+            try {
+                // setUsers(null);
+                const response = await axios.get(
+                    'http://localhost:8080/SpringRest/qnaList.do/',
+                );
+                setUsers(response.data);
+            } catch (e) {}
+        };
+        fetchUsers();
+    }, []);
 
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
@@ -24,33 +37,24 @@ const QnA = ({ logout, qnaRegister }) => {
         setSelectedKey(key);
     };
 
-    // useEffect(() => {
-    //     const items = qna.filter((data) => {
-    //         if (searchTerm === null) {
-    //             return data;
-    //         } else if (data.title.toLowerCase().includes(searchTerm)) {
-    //             return data;
-    //         }
-    //     });
-    //     setSearchResult(items);
-    // }, [searchTerm]);
-    //더미 데이터만큼 map사용
-    const listQna = qna.map((QnA, i) => {
+    const items = users.filter((data) => {
+        if (data === null) {
+            return data;
+        } else if (data.title.toLowerCase().includes(searchTerm)) {
+            return data;
+        } else if (data.author.toLowerCase().includes(searchTerm)) {
+            return data;
+        }
+    });
+
+    const listQna = items.map((QnA, i) => {
         // <tr onClick={handleClick}>
         //     <td>{QnA.id}</td>
         //     <td className="tit">{QnA.title}</td>
         //     <td>{QnA.date}</td>
         //     <td>{QnA.views}</td>
         // </tr>
-        return (
-            <QnAInfo
-                key={i}
-                QnA={QnA}
-                onClick={() => {
-                    handleClick(i);
-                }}
-            />
-        );
+        return <QnAInfo key={i} QnA={QnA} />;
     });
     return (
         <>
@@ -111,6 +115,12 @@ const QnA = ({ logout, qnaRegister }) => {
 
                 {/* 공지사항 리스트  */}
                 <table className="table_list">
+                    <thead>
+                        <tr>
+                            <th>제목</th>
+                            <th>이메일</th>
+                        </tr>
+                    </thead>
                     <tbody>{listQna}</tbody>
                 </table>
             </div>

@@ -1,16 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Link, Route, useHistory } from 'react-router-dom';
-import BoardDetail from './BoardDetail';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
-const BoardInfo = ({ key, board, details }) => {
-    const history = useHistory();
-    // const
-    // console.log(board.num);
-    const [users, setUsers] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-
+const BoardInfo = ({ board }) => {
     // const location = {
     // hash: ""
     // pathname: "/BoardDetail"

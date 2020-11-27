@@ -9,13 +9,9 @@ import axios from 'axios';
 const Board = ({ logout }) => {
     // 검색기능
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
-    const [selectedKey, setSelectedKey] = useState(-1);
     const [users, setUsers] = useState([null]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    // const [call, setCall] = useState([]);
-    const divide = '제목';
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -50,7 +46,7 @@ const Board = ({ logout }) => {
     const listItem = items.map((user, i) => {
         return (
             <>
-                <BoardInfo key={i} board={user} details={user} />
+                <BoardInfo key={i} board={user} />
             </>
         );
     });

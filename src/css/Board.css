@@ -158,7 +158,7 @@
 
 
 .search_form {
-    width: 765px;
+    width: 830px;
     margin: 10px auto 70px;
 }
 
@@ -243,4 +243,25 @@
     word-break: break-all;
     vertical-align: middle;
     text-decoration: none;
+}
+
+/* boarder Detail */
+.table_list .b_content {
+    color: #333;
+}
+
+.inner_search .b_Btn {
+    position: absolute;
+    right: 0;
+    width: 130px;
+    height: 44px;
+    line-height: 42px;
+    margin: 25px auto 0;
+    font-size: 1.125rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0766ee;
+    border: 1px solid #0766ee;
+    transition: all 0.3s;
 }

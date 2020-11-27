@@ -53,7 +53,7 @@ const Navbar = ({ logout }) => {
                                                 target="_self"
                                                 onClick={onLogout}
                                             >
-                                                로그아웃asd
+                                                로그아웃
                                             </Link>
                                         </li>
                                     </div>
