@@ -8,7 +8,7 @@ body {
 }
 
 
-.intro {
+.introy {
     padding: 300px 0 0;
     background: img_box('../assets/images/unnamed.jpg') no-repeat center 0 / contain;
 }
@@ -16,12 +16,10 @@ body {
  .txt_area {
     position: relative;
     box-sizing: border-box;
-    /* width: calc(95% - 200px); */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0px 50px;
     top: -150px;
-    /* background-color: #fff; */
 }
 
  .txt_area p {
@@ -73,7 +71,6 @@ body {
     font-size: 3.75rem;
     color: #0866ee;
     content: '[';
-    /* height: 100px; */
 }
 
  .pro_area strong:after {

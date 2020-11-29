@@ -1,15 +1,14 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import '../css/BS.css';
-// import { Navbar } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 
-const GS = () => {
+const GS = ({ logout }) => {
     return (
         <div>
             {/* 네비게이션 바 */}
-            <Navbar />
+            <Navbar logout={logout} />
 
             <main>
                 <section>
@@ -365,8 +364,6 @@ const GS = () => {
             </main>
             {/* 푸터 */}
             <Footer />
-
-            {/* <Route path="/" component={Home} exact /> */}
         </div>
     );
 };

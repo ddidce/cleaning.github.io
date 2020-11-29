@@ -2,18 +2,11 @@ import React, { useState } from 'react';
 import '../css/Reservation.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { Event } from '@material-ui/icons';
 const Reservation = () => {
     var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
     const [email, setEmail] = useState('');
-    /*const emailCheck=(e)=>{
-    if(regExp.test(email)) {
-        e.preventDefault();
-    }else{
-        e.preventDefault();
-    } 
-}*/
+
     const onchangeEmail = (e) => {
         setEmail(e.target.value);
     };
@@ -333,8 +326,7 @@ const Reservation = () => {
                             ① ('www.project.co.kr''이하
                             '프로젝트관리서비스(주)')은(는) 다음의 개인정보
                             항목을 처리하고 있습니다. <br />
-                            <br />
-                            - 필수항목 : 이메일, 휴대전화번호, 자택주소,
+                            <br />- 필수항목 : 이메일, 휴대전화번호, 자택주소,
                             비밀번호 질문과 답, 비밀번호, 로그인ID, 성별,
                             생년월일, 이름, 회사전화번호, 직책, 회사명, 직업{' '}
                             <br />- 선택항목 :

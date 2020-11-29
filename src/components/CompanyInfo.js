@@ -14,14 +14,13 @@ import bi_icon02 from '../assets/images/bi_icon02.png';
 import bi_icon03 from '../assets/images/bi_icon03.png';
 import '../css/CompanyInfo.css';
 
-// import { Navbar } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 
-const CompanyInfo = () => {
+const CompanyInfo = ({ logout }) => {
     return (
         <div>
             {/* 네비게이션 바 */}
-            <Navbar />
+            <Navbar logout={logout} />
 
             <main>
                 <section>
@@ -43,7 +42,7 @@ const CompanyInfo = () => {
                                 />
                             </div>
 
-                            <div className="intro">
+                            <div className="introy">
                                 <div className="txt_area">
                                     <p>
                                         고객 여러분 안녕하십니까?
@@ -236,8 +235,6 @@ const CompanyInfo = () => {
             </main>
             {/* 푸터 */}
             <Footer />
-
-            {/* <Route path="/" component={CompanyInfo} exact /> */}
         </div>
     );
 };

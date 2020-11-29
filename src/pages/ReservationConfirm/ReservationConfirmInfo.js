@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReservationConfirmInfo = ({ key, reservation, onRemove }) => {
+const ReservationConfirmInfo = ({ reservation, onRemove }) => {
     return (
         <tr>
             <td>{reservation.id}</td>

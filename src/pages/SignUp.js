@@ -116,12 +116,9 @@ export default function HorizontalLabelPositionBelowStepper() {
                 <div>
                     {activeStep === steps.length ? (
                         <div>
-                            {/* <Typography className={classes.instructions}> */}
                             <Link to="/LogIn" className={classes.LogInButton}>
                                 {'로그인'}
                             </Link>
-                            {/* </Typography> */}
-                            {/* <Button onClick={handleReset}>Reset</Button> */}
                         </div>
                     ) : (
                         <div>

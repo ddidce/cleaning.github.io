@@ -35,7 +35,6 @@ const Navbar = ({ logout }) => {
                         </li>
                         {(() => {
                             // 받아온 프롭스로 정보가 있으면 if문 실행
-                            // if (user) {
                             if (cureentUser) {
                                 return (
                                     <div className="login_part">

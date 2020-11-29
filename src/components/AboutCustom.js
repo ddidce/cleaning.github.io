@@ -1,16 +1,15 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import '../css/AboutCustom.css';
-// import { Navbar } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import somelike from '../assets/images/somelike.png';
 
-const AboutCustom = () => {
+const AboutCustom = (logout) => {
     return (
         <div>
             {/* 네비게이션 바 */}
-            <Navbar />
+            <Navbar logout={logout} />
 
             <main>
                 <section>
@@ -267,11 +266,8 @@ const AboutCustom = () => {
                     </details>
                 </div>
             </main>
-
             {/* 푸터 */}
             <Footer />
-
-            {/* <Route path="/" component={Home} exact /> */}
         </div>
     );
 };

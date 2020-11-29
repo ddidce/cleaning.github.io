@@ -12,7 +12,7 @@ h1 {
     text-align: center;
     margin: 10px auto;
 }
-input[type='tel'] {
+input[type='tel1'] {
     position: relative;
     top: -10px;
     width: 185px;
@@ -85,7 +85,7 @@ input[type='tel'] {
     position: relative;
     top: -10px;
 }
-.name {
+.name2 {
     position: relative;
     top: -10px;
     width: 185px;
@@ -112,22 +112,7 @@ input[type='tel'] {
     margin: 0px 5px;
     color: #2789f6;
 }
-/* .email_btn {
-    position: relative;
-    top: -10px;
-    background-color: #2789f6;
-    color: white;
-    border: 3px solid #60a6f5;
-    border-radius: 5px;
-} */
-/* #emailcheck {
-    position: relative;
-    left: 10px;
-    display: inline;
-    color: red;
-    font-weight: 600;
-    font-size: 11px;
-} */
+
 .background2 {
     position: relative;
     display: inline-block;
@@ -135,7 +120,7 @@ input[type='tel'] {
     height: 150px;
     background-color: rgba(40, 136, 246, 0.7);
 }
-.txt-area {
+.txt-areas {
     position: relative;
     left: 5px;
     top: -25px;
@@ -170,14 +155,14 @@ input[type='tel'] {
     color: #666;
     word-break: keep-all;
 }
-.sub_tit {
+.sub_tits {
     padding: 0;
     font-size: 1rem;
     font-weight: 500;
     color: #333;
     text-align: left;
 }
-.btn {
+.btns {
     margin: 15px auto;
     position: relative;
     background-color: #2789f6;

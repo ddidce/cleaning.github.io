@@ -1,16 +1,7 @@
-import axios from 'axios';
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BoardInfo = ({ board }) => {
-    // const location = {
-    // hash: ""
-    // pathname: "/BoardDetail"
-    // search: ""
-    // state: undefined
-    // }
-
-    // location: console.log(board);
     return (
         <>
             <tr key={board.num}>
