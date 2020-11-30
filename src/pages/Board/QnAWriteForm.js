@@ -32,8 +32,6 @@ const QnAWriteForm = ({ logout }) => {
     const onchangePassword = (e) => {
         setPassword(e.target.value);
     };
-
-    // console.log(phone, email, titls, edit, password);
     const history = useHistory();
     const onClickBtn = () => {
         alert('완료되었습니다.');
@@ -45,13 +43,11 @@ const QnAWriteForm = ({ logout }) => {
             pwd: password,
         };
 
-        console.log(qnaRegister);
         try {
             axios
                 .post(
                     BASE_URL,
                     { qnaRegister },
-                    //{ withCredentials: true },
                     { Headers },
                     console.log(qnaRegister),
                 )
@@ -72,11 +68,6 @@ const QnAWriteForm = ({ logout }) => {
                     }
                     console.log(error.config);
                 })
-                // .then((response) => setPhone(response.data.phone))
-                // .then((response) => settitle(response.data.titles))
-                // .then((response) => setEmail(response.data.email))
-                // .then((response) => setEdit(response.data.content))
-                // .then((response) => setPassword(response.data.pwd))
                 .then((asd) => {
                     console.log(asd);
                     history.push({
@@ -111,7 +102,7 @@ const QnAWriteForm = ({ logout }) => {
                     </ul>
                 </div>
             </div>
-            <h3 className="qna_tit">칭찬코너</h3>
+            <h3 className="qna_tit">질문하기</h3>
 
             <p className="qna_txt">
                 '프로젝트 서비스를 이용해 주셔서 감사합니다. '

@@ -80,7 +80,6 @@ button {
 }
 
 .write_form .row.post_address .input_box div input {
-    /* float: left; */
     width: 330px;
 }
 
@@ -102,7 +101,6 @@ button {
     position: relative;
     display: flex;
     flex-direction: row;
-    /* margin-left: 40px; */
     left: 40px;
     align-items: center;
 }

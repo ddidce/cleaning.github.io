@@ -43,8 +43,6 @@ const footer = () => {
                         </li>
                     </ul>
                 </div>
-
-                {/* sf => second fourth */}
                 <div className="footer-contents_ss">
                     <p> © 2020. Project. Inc. All Rights Reserved.</p>
                 </div>

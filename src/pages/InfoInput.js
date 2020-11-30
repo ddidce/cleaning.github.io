@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import DaumPostcode from 'react-daum-postcode';
 import '../css/InfoInput.css';
-
-// http://www.objgen.com/json/models/Pzu <- json파일
 const InfoInput = () => {
     const [post, setPost] = useState({
         zoneCode: '',
@@ -25,17 +23,6 @@ const InfoInput = () => {
             return setPasswordError(true);
         }
     };
-    console.log({
-        id,
-        password,
-        passwordCheck,
-        name,
-        phone,
-        email,
-        deAddress,
-        post,
-        zoneCode: post.zoneCode,
-    });
 
     const onChangeId = (e) => {
         setId(e.target.value);

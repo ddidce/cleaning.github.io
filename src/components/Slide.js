@@ -1,8 +1,5 @@
 import React from 'react';
 import '../css/Slide.css';
-// import Carousel from '@brainhubeu/react-carousel';
-// import '@brainhubeu/react-carousel/lib/style.css';
-// import House from '../src/assets/images/house.png';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import '../../css/QnA.css';
 import QnAInfo from './QnAInfo';
 import axios from 'axios';
 
-const QnA = ({ logout, qnaRegister }) => {
+const QnA = ({ logout, cureentUser }) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResult, setSearchResult] = useState({});
     const [selectedKey, setSelectedKey] = useState(-1);
     const [users, setUsers] = useState([null]);
-    const location = useLocation();
-    // useEffect(() => {
-    //     const QnAInfo = location.state;
-    //     console.dir(QnAInfo);
-    // }, [location]);
+
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -42,18 +37,12 @@ const QnA = ({ logout, qnaRegister }) => {
             return data;
         } else if (data.title.toLowerCase().includes(searchTerm)) {
             return data;
-        } else if (data.author.toLowerCase().includes(searchTerm)) {
+        } else if (data.email.toLowerCase().includes(searchTerm)) {
             return data;
         }
     });
 
     const listQna = items.map((QnA, i) => {
-        // <tr onClick={handleClick}>
-        //     <td>{QnA.id}</td>
-        //     <td className="tit">{QnA.title}</td>
-        //     <td>{QnA.date}</td>
-        //     <td>{QnA.views}</td>
-        // </tr>
         return <QnAInfo key={i} QnA={QnA} />;
     });
     return (
@@ -82,7 +71,18 @@ const QnA = ({ logout, qnaRegister }) => {
                             <br />
                             전문 청소 서비스의 시작! 프로젝트입니다.
                         </p>
-                        <Link to="/QnAWriteForm">질문하기</Link>
+                        {cureentUser === null ? (
+                            <Link
+                                to="/Login"
+                                onClick={() => {
+                                    alert('로그인 후 이용해주세요.');
+                                }}
+                            >
+                                질문하기
+                            </Link>
+                        ) : (
+                            <Link to="/QnAWriteForm">질문하기</Link>
+                        )}
                     </div>
                 </div>
 

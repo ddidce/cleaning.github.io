@@ -15,6 +15,7 @@ import '../css/MemberModifiy.css';
 
 const MemberModifiy = ({ cureentUser, logout }) => {
     const [post, setPost] = useState({
+        user_id: '',
         name: '',
         phone: '',
         address: '',
@@ -24,6 +25,7 @@ const MemberModifiy = ({ cureentUser, logout }) => {
         isRegister: false,
         register: [],
     });
+    console.log(cureentUser);
 
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -50,7 +52,6 @@ const MemberModifiy = ({ cureentUser, logout }) => {
                     },
                 );
                 setUsers(response.data);
-                console.log(response.data);
             } catch (error) {
                 setError(error);
             }

@@ -15,7 +15,6 @@ const Board = ({ logout }) => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                // setUsers(null);
                 setLoading(true);
                 setError(null);
                 const response = await axios.get(

@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.warp {
+    position: relative;
+    margin: 0px auto;
+    max-width: 1200px;
+    min-width: 1200px;
+}
+h1 {
+    text-align: center;
+    margin: 10px auto;
+}
+input[type='tel1'] {
+    position: relative;
+    top: -10px;
+    width: 185px;
+    height: 23px;
+    margin: 0px 5px;
+}
+#tit {
+    padding: 10px;
+    text-align: center;
+}
+.choose {
+    border-top: 2px solid black;
+    border-bottom: 2px solid rgb(192, 192, 192);
+}
+#tit2 {
+    height: 150px;
+    padding: 10px;
+    text-align: center;
+}
+.add-text {
+    position: relative;
+    top: 65px;
+}
+.background {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    background-color: rgba(40, 136, 246, 0.7);
+}
+.choose-1 {
+    display: inline-block;
+    margin: 0px 5px;
+    position: relative;
+    left: 5px;
+    top: -5px;
+}
+.choose2 {
+    border-bottom: 2px solid rgb(192, 192, 192);
+    height: auto;
+}
+.date {
+    position: relative;
+    margin: 0px 5px;
+    top: -15px;
+}
+#addr_box {
+    position: relative;
+    left: 5px;
+    top: -15px;
+    width: 142px;
+    height: 22px;
+}
+#addr_text {
+    position: relative;
+    left: 10px;
+    top: -15px;
+    height: 22px;
+    width: 350px;
+}
+.pyung-txt {
+    position: relative;
+    top: -15px;
+    width: 185px;
+    height: 22px;
+    margin: 0px 5px;
+}
+.intro {
+    font-size: 11px;
+    display: inline-block;
+    position: relative;
+    top: -10px;
+}
+.name2 {
+    position: relative;
+    top: -10px;
+    width: 185px;
+    height: 22px;
+    margin: 0px 5px;
+}
+.tel {
+    display: inline-block;
+}
+#email {
+    position: relative;
+    top: -10px;
+    width: 185px;
+    height: 23px;
+    margin: 0px 5px;
+}
+.reserv_mail {
+    display: inline;
+    position: relative;
+    top: -10px;
+    left: 5px;
+    width: 152px;
+    height: 30px;
+    margin: 0px 5px;
+    color: #2789f6;
+}
+
+.background2 {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    background-color: rgba(40, 136, 246, 0.7);
+}
+.txt-areas {
+    position: relative;
+    left: 5px;
+    top: -25px;
+    width: 800px;
+}
+.textarea-p {
+    font-size: 11px;
+    position: relative;
+    width: 270px;
+    left: 230px;
+    top: -25px;
+}
+.agree {
+    font-weight: 600;
+    margin: 5px 15px;
+    text-align: center;
+}
+.data_box {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    width: 80%;
+    height: 153px;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+    margin: 10px auto;
+}
+.txt {
+    margin: 5px 0 20px;
+    line-height: 1.6;
+    font-size: 0.875rem;
+    color: #666;
+    word-break: keep-all;
+}
+.sub_tits {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+}
+.btns {
+    margin: 15px auto;
+    position: relative;
+    background-color: #2789f6;
+    color: white;
+    border: 3px solid #60a6f5;
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+}
+.infor-check {
+    position: relative;
+    text-align: center;
+    left: 15px;
+}
