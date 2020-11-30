@@ -116,23 +116,23 @@ const AppRouter = () => {
                 <Route exact path="/QnAWriteForm">
                     <QnAWriteForm logout={logout} />
                 </Route>
-                <Route exact path="/AboutCustom" logout={logout}>
-                    <AboutCustom />
+                <Route exact path="/AboutCustom">
+                    <AboutCustom logout={logout} cureentUser={cureentUser} />
                 </Route>
                 <Route exact path="/CompanyInfo" logout={logout}>
                     <CompanyInfo />
                 </Route>
-                <Route exact path="/AS" logout={logout}>
-                    <AS />
+                <Route exact path="/AS">
+                    <AS logout={logout} cureentUser={cureentUser} />
                 </Route>
-                <Route exact path="/Es" logout={logout}>
-                    <Es />
+                <Route exact path="/Es">
+                    <Es logout={logout} />
                 </Route>
-                <Route exact path="/BS" logout={logout}>
-                    <BS />
+                <Route exact path="/BS">
+                    <BS logout={logout} />
                 </Route>
-                <Route exact path="/GS" logout={logout}>
-                    <GS />
+                <Route exact path="/GS">
+                    <GS logout={logout} />
                 </Route>
                 <Route
                     exact

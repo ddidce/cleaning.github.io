@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AboutImg from '../../src/assets/images/AboutUs_one.jpg';
 import '../css/About.css';
 
@@ -24,7 +25,9 @@ const About = () => {
                         amet voluptatem delectus sequi eius dolore natus porro?
                         Omnis incidunt dicta corrupti inventore reiciendis.
                     </p>
-                    <button>Read More</button>
+                    <Link to="/CompanyInfo">
+                        <button>Read More</button>
+                    </Link>
                 </div>
             </div>
         </div>

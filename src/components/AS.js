@@ -4,7 +4,7 @@ import '../css/AboutCustom.css';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 
-const AS = ({ logout }) => {
+const AS = ({ logout, cureentUser }) => {
     return (
         <div>
             {/* 네비게이션 바 */}
@@ -37,15 +37,18 @@ const AS = ({ logout }) => {
                                 서비스에 불만 및 A/S받을 내용에 대해
                                 작성해주세요.
                             </p>
-
-                            <Link
-                                to="/BS"
-                                onClick={() => {
-                                    alert('로그인이 필요합니다');
-                                }}
-                            >
-                                접수하기
-                            </Link>
+                            {cureentUser === null ? (
+                                <Link
+                                    to="/Login"
+                                    onClick={() => {
+                                        alert('로그인이 필요합니다');
+                                    }}
+                                >
+                                    접수하기
+                                </Link>
+                            ) : (
+                                <Link to="/BS">접수하기</Link>
+                            )}
                         </div>
                     </div>
                 </section>

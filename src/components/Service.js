@@ -16,31 +16,31 @@ const Work = () => {
                 </h1>
                 <div className="Service-part">
                     <div>
-                        <Link to="/House" className="icon">
+                        <Link to="/DetailService/Home" className="icon">
                             <img src={House} alt="" />
                             <h3>일반시설</h3>
                         </Link>
                     </div>
                     <div>
-                        <Link to="/House" className="icon">
+                        <Link to="/DetailService/Public" className="icon">
                             <img src={Building} alt="" />
                             <h3>공공시설</h3>
                         </Link>
                     </div>
                     <div>
-                        <Link to="/University" className="icon">
+                        <Link to="/DetailService/Education" className="icon">
                             <img src={University} alt="" />
                             <h3>교육시설</h3>
                         </Link>
                     </div>
                     <div>
-                        <Link to="/Hospital" className="icon">
+                        <Link to="/DetailService/Medical" className="icon">
                             <img src={Hospital} alt="" />
                             <h3>의료시설</h3>
                         </Link>
                     </div>
                     <div>
-                        <Link to="/Dish" className="icon">
+                        <Link to="/DetailService/Food" className="icon">
                             <img src={Dish} alt="" />
                             <h3>요식시설</h3>
                         </Link>

@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import somelike from '../assets/images/somelike.png';
 
-const AboutCustom = (logout) => {
+const AboutCustom = ({ logout, cureentUser }) => {
     return (
         <div>
             {/* 네비게이션 바 */}
@@ -53,14 +53,18 @@ const AboutCustom = (logout) => {
                             </p>
                             <p>02-2362-5923</p>
                             <div>
-                                <Link
-                                    to="/GS"
-                                    onClick={() => {
-                                        alert('로그인이 필요합니다');
-                                    }}
-                                >
-                                    접수하기
-                                </Link>
+                                {cureentUser === null ? (
+                                    <Link
+                                        to="/Login"
+                                        onClick={() => {
+                                            alert('로그인이 필요합니다');
+                                        }}
+                                    >
+                                        접수하기
+                                    </Link>
+                                ) : (
+                                    <Link to="/GS">접수하기</Link>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -78,7 +82,7 @@ const AboutCustom = (logout) => {
                     <h4>서비스 이용</h4>
 
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q.코로나 19가 걱정되는데 괜찮을까요?
                         </summary>
                         <p>
@@ -90,7 +94,7 @@ const AboutCustom = (logout) => {
                         </p>
                     </details>
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 가사도우미 서비스 종류는 어떤 게 있나요?
                         </summary>
                         <p>
@@ -106,7 +110,7 @@ const AboutCustom = (logout) => {
                         </p>
                     </details>
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 청소 범위가 궁금해요.
                         </summary>
                         <p>
@@ -136,7 +140,7 @@ const AboutCustom = (logout) => {
                     </details>
 
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 우리 지역에서 클리닝서비스를 이용할 수 있나요?
                         </summary>
                         <p>
@@ -155,7 +159,7 @@ const AboutCustom = (logout) => {
                     </details>
 
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 청소 도구는 무엇을 준비해야 하나요?
                         </summary>
                         <p>
@@ -174,7 +178,7 @@ const AboutCustom = (logout) => {
                     </details>
 
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 우리 집에 어떤 분이 방문하나요?
                         </summary>
                         <p>
@@ -183,7 +187,7 @@ const AboutCustom = (logout) => {
                         </p>
                     </details>
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 서비스 시간을 추천해 주세요.
                         </summary>
                         <p>
@@ -202,7 +206,7 @@ const AboutCustom = (logout) => {
                     </details>
 
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 클리너에게 휴식 시간을 드려야 하나요?
                         </summary>
                         <p>
@@ -212,7 +216,7 @@ const AboutCustom = (logout) => {
                     </details>
 
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 부재중일 때도 서비스가 가능한가요?
                         </summary>
                         <p>
@@ -239,7 +243,7 @@ const AboutCustom = (logout) => {
                     <h4>서비스 요금</h4>
 
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 시간을 연장하고 싶어요.
                         </summary>
                         <p>
@@ -255,7 +259,7 @@ const AboutCustom = (logout) => {
                     </details>
 
                     <details>
-                        <summary class="question">
+                        <summary className="question">
                             Q. 클리너에게 식대를 제공해야 하나요?
                         </summary>
                         <p>
