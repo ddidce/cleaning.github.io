@@ -1,0 +1,181 @@
+
+
+.write1 {
+    padding-top: 10px;
+    
+    }
+
+
+.write_for {
+    padding-bottom: 150px;
+    margin: 0 auto;
+    border-top: 2px solid #333;
+    width:60%;
+    height: 100%;
+    overflow: auto;
+}
+
+.write_for .row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.write_for .row .label {
+    float: left;
+    box-sizing: border-box;
+    width: 200px;
+    height: 60px;
+    padding: 18px 0 0 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    background-color: #f6f6f6;
+    text-align: left;
+}
+
+.write_for .row .input_box {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    width: calc(100% - 200px);
+    height: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+}
+
+
+
+.write_for .row .input_box input {
+    width: 20px;
+    height: 20px;
+    padding: 0 20px;
+    vertical-align: top;
+}
+
+
+.write_for .row .title input {
+    width: 100%;
+}
+
+
+.write_for .row .phone input {
+    float: left;
+    width: 100px;
+}
+
+.write_for .row .phone span {
+    float: left;
+    margin: 0 5px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    color: #333;
+}
+
+.write_for .row .input_box textarea {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+.write_for .row.contents .label {
+    height: 220px;
+}
+
+
+
+.write_for .row .input_box input {
+  
+    height: 40px;
+    padding: 0 20px;
+    vertical-align: top;
+}
+
+.write_for .row .name input {
+    width: 330px;
+}
+
+.write_for .row .email input {
+    width: 330px;
+}
+
+.write_for .row .phone input {
+
+    width: 330px;
+}
+
+
+textarea {
+    box-sizing: border-box;
+    font-size: 1rem;
+    resize: none;
+    border-radius: 0;
+}
+
+
+.data_boxes {
+    box-sizing: border-box;
+    width: 100%;
+    height: 153px;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border: 1px solid #ddd;
+}
+
+.data .txt {
+    margin: 5px 0 20px;
+    line-height: 1.6;
+    font-size: 0.875rem;
+    color: #666;
+    word-break: keep-all;
+}
+
+.data .sub_tit {
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+}
+
+
+
+
+.chk_box{
+    padding: 20px 0 0;
+}
+
+.txtbox {
+    display: block;
+    padding: 40px 0 10px;
+}
+
+
+
+
+.btn_boxe>div button {
+    position: relative;
+    float: left;
+    display: block;
+    width: 120px;
+    height: 50px;
+    margin: 0 0 0 10px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    left: 50%;
+    margin-bottom: 100px;
+}
+
+.btn_boxe>div button {
+    background-color: #313131;
+    border: 1px solid #313131;
+    color: #fff;
+}

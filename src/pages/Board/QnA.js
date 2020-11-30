@@ -8,9 +8,15 @@ import axios from 'axios';
 
 const QnA = ({ logout, cureentUser }) => {
     const [searchTerm, setSearchTerm] = useState('');
+<<<<<<< HEAD
     const [users, setUsers] = useState([null]);
 
     console.log(cureentUser);
+=======
+    const [selectedKey, setSelectedKey] = useState(-1);
+    const [users, setUsers] = useState([null]);
+
+>>>>>>> cde2427a8ad1bcfd2ff1728d1d9437e9cddb92f8
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -31,18 +37,12 @@ const QnA = ({ logout, cureentUser }) => {
             return data;
         } else if (data.title.toLowerCase().includes(searchTerm)) {
             return data;
-        } else if (data.author.toLowerCase().includes(searchTerm)) {
+        } else if (data.email.toLowerCase().includes(searchTerm)) {
             return data;
         }
     });
 
     const listQna = items.map((QnA, i) => {
-        // <tr onClick={handleClick}>
-        //     <td>{QnA.id}</td>
-        //     <td className="tit">{QnA.title}</td>
-        //     <td>{QnA.date}</td>
-        //     <td>{QnA.views}</td>
-        // </tr>
         return <QnAInfo key={i} QnA={QnA} />;
     });
     return (
@@ -71,6 +71,7 @@ const QnA = ({ logout, cureentUser }) => {
                             <br />
                             전문 청소 서비스의 시작! 프로젝트입니다.
                         </p>
+<<<<<<< HEAD
                         {cureentUser ? (
                             <Link to="/QnAWriteForm">질문하기</Link>
                         ) : (
@@ -78,10 +79,22 @@ const QnA = ({ logout, cureentUser }) => {
                                 to="/Login"
                                 onClick={() => {
                                     alert('로그인 후 이용해 주세요');
+=======
+                        {cureentUser === null ? (
+                            <Link
+                                to="/Login"
+                                onClick={() => {
+                                    alert('로그인 후 이용해주세요.');
+>>>>>>> cde2427a8ad1bcfd2ff1728d1d9437e9cddb92f8
                                 }}
                             >
                                 질문하기
                             </Link>
+<<<<<<< HEAD
+=======
+                        ) : (
+                            <Link to="/QnAWriteForm">질문하기</Link>
+>>>>>>> cde2427a8ad1bcfd2ff1728d1d9437e9cddb92f8
                         )}
                     </div>
                 </div>

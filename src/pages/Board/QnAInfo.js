@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const QnAInfo = ({ key, QnA, onClick }) => {
+const QnAInfo = ({ QnA, onClick }) => {
     return (
         <tr onClick={onClick}>
             <td className="tit">
@@ -15,7 +15,6 @@ const QnAInfo = ({ key, QnA, onClick }) => {
                 </Link>
             </td>
             <td>{QnA.email}</td>
-            {/* <td>{QnA.views}</td> */}
         </tr>
     );
 };

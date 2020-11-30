@@ -1,37 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Route, useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import BoardInfo from './BoardInfo';
 import '../../css/Board.css';
 import axios from 'axios';
 
 const BoardDetail = ({ routeProps, logout }) => {
-    // const BoardDetail = ({ logout, board }) => {
     // 검색기능
-    const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
-    const [selectedKey, setSelectedKey] = useState(-1);
     const [boardDetail, setBoardDetail] = useState([]);
-    const history = useHistory();
-    console.log(routeProps);
     useEffect(() => {
         const users = async () => {
             try {
                 let URL = `http://localhost:8080/SpringRest/retrieve.do?num=${routeProps.match.params.num}`;
                 const response = await axios.get(URL);
                 setBoardDetail(response.data);
-            } catch (error) {
-                // alert('에러입니다,');
-            }
+            } catch (error) {}
         };
         users();
     }, [routeProps]);
-
-    console.log(boardDetail);
-    // const backBtn = () => {
-    //     history.push('/Board');
-    // };
 
     return (
         <>
@@ -76,9 +62,6 @@ const BoardDetail = ({ routeProps, logout }) => {
                     <thead>
                         <tr>
                             <th>내용</th>
-                            {/* <th>제목</th>
-                            <th>아이디</th>
-                            <th>시간</th> */}
                         </tr>
                     </thead>
                     <tbody>

@@ -12,6 +12,7 @@ const QnAUpdateForm = ({ logout, routeProps }) => {
         'Content-type': 'application/x-www-form-urlencoded',
         'Content-Type': 'application/json',
     };
+    const history = useHistory();
     const onChangeUsers = (e) => {
         setUsers({
             ...users,
@@ -29,8 +30,7 @@ const QnAUpdateForm = ({ logout, routeProps }) => {
         };
         users();
     }, [routeProps]);
-    console.log(users);
-    const history = useHistory();
+
     const onClickBtn = () => {
         alert('완료되었습니다.');
 
@@ -80,12 +80,6 @@ const QnAUpdateForm = ({ logout, routeProps }) => {
                 '프로젝트 서비스를 이용해 주셔서 감사합니다. '
             </p>
             <div className="QnA_write_form write_praise">
-                {/* <div className="row">
-                    <label htmlFor="wirte_phone" className="label">
-                        연락처 *
-                    </label>
-                    <div className="input_box phone">
-                        <div className="phone_input"> */}
                 <input
                     type="hidden"
                     name="seq"
@@ -93,9 +87,6 @@ const QnAUpdateForm = ({ logout, routeProps }) => {
                     maxLength="10"
                     onChange={onChangeUsers}
                 />
-                {/* </div>
-                     </div>
-                 </div> */}
 
                 <div className="row">
                     <label htmlFor="wirte_phone" className="label">
