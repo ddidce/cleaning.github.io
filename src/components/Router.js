@@ -77,7 +77,7 @@ const AppRouter = () => {
                     )}
                 ></Route>
                 <Route exact path="/QnA">
-                    <QnA logout={logout} />
+                    <QnA logout={logout} cureentUser={cureentUser} />
                 </Route>
 
                 <Route exact path="/QnAWriteForm">

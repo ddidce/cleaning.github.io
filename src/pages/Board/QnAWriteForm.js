@@ -111,7 +111,7 @@ const QnAWriteForm = ({ logout }) => {
                     </ul>
                 </div>
             </div>
-            <h3 className="qna_tit">칭찬코너</h3>
+            <h3 className="qna_tit">질문하기</h3>
 
             <p className="qna_txt">
                 '프로젝트 서비스를 이용해 주셔서 감사합니다. '

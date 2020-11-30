@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import '../../css/QnA.css';
 import QnAInfo from './QnAInfo';
 import axios from 'axios';
 
-const QnA = ({ logout, qnaRegister }) => {
+const QnA = ({ logout, cureentUser }) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResult, setSearchResult] = useState({});
-    const [selectedKey, setSelectedKey] = useState(-1);
     const [users, setUsers] = useState([null]);
-    const location = useLocation();
-    // useEffect(() => {
-    //     const QnAInfo = location.state;
-    //     console.dir(QnAInfo);
-    // }, [location]);
+
+    console.log(cureentUser);
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                // setUsers(null);
                 const response = await axios.get(
                     'http://localhost:8080/SpringRest/qnaList.do/',
                 );
@@ -28,13 +22,8 @@ const QnA = ({ logout, qnaRegister }) => {
         };
         fetchUsers();
     }, []);
-
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
-    };
-
-    const handleClick = (key) => {
-        setSelectedKey(key);
     };
 
     const items = users.filter((data) => {
@@ -82,7 +71,18 @@ const QnA = ({ logout, qnaRegister }) => {
                             <br />
                             전문 청소 서비스의 시작! 프로젝트입니다.
                         </p>
-                        <Link to="/QnAWriteForm">질문하기</Link>
+                        {cureentUser ? (
+                            <Link to="/QnAWriteForm">질문하기</Link>
+                        ) : (
+                            <Link
+                                to="/Login"
+                                onClick={() => {
+                                    alert('로그인 후 이용해 주세요');
+                                }}
+                            >
+                                질문하기
+                            </Link>
+                        )}
                     </div>
                 </div>
 

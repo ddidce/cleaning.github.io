@@ -97,13 +97,13 @@
     transition: all 0.3s;
 }
 
-.inner_search .q_ModiBtn {
+.inner_search .q_ModiBtn a{
     position: absolute;
     right: 300px;
     width: 130px;
     height: 44px;
     line-height: 42px;
-    margin: 25px auto 0;
+    margin: 10px auto 0;
     font-size: 1.125rem;
     color: #fff;
     text-align: center;
